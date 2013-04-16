@@ -4,3 +4,137 @@
 body {padding-top:60px}
 @import "bootstrap-responsive";
 
+
+
+/*Main page styles
+----------------------------------------------------
+The styles are based on http://twitter.github.com/bootstrap/examples/hero.html
+and http://www.colbowdesign.com/ */
+
+.introduction {
+background-color: #EEE;
+color: inherit;
+font-size: 18px;
+font-weight:200;
+line-height: 30px;
+padding: 1.25% 2.25% 1.25% 2.25%;
+margin: 0 5% 30px 3%;
+border-radius: 8px;
+-moz-border-radius: 8px;
+-webkit-border-radius: 8px;
+}
+
+.mobile_intro {
+background-color: #EEE;
+color: inherit;
+padding: 1% 1% 2px 1%;
+border-radius: 8px;
+-moz-border-radius: 8px;
+-webkit-border-radius: 8px;
+}
+
+.featurework {
+  margin: 0 3% 10px 1%;
+}
+
+.ribbon-left{
+  height: 47px;
+  width: 38px;
+  background-image: url(ribbon-left.jpg);
+  background-repeat: no-repeat;
+  float: left;
+  margin: -66px 0 0 0;
+}
+.ribbon-right{
+  height: 47px;
+  width: 38px;
+  background-image: url(ribbon-right.jpg);
+  background-repeat: no-repeat;
+  float: right;
+  margin: -66px 0 0 0;
+}
+.ribbon h3{
+  width: 100%;
+  background-image: url(ribbon-mid.png);
+  background-repeat: repeat-x;
+  height: 47px;
+  color: white;
+  padding: 9px 0 0 0;
+}
+
+
+
+      /* Style for the footer */
+      #footer {
+        height: 40px;
+        text-align: center;
+        margin-top: 20px; 
+        padding-top: 10px;
+        border-top: 2px solid #E1E1E1;
+      }
+
+     
+      
+
+.featurework h3{
+  letter-spacing: 0.16em;
+  line-height: 1.3em;
+  font-family: futura-pt-1,futura-pt-2, Helvetica, Arial, sans-serif;
+  font-size: 0.88em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.course_intro{
+  width: 35%;
+  float: left;
+  padding: 0 2% 0 2%;
+}
+
+.train_intro{
+  width: 25%;
+  float: left;
+  padding: 0 2% 0 2%;
+}
+
+.logo{
+  height: 40px;
+  width: 57px;
+}
+
+navbar .nav {
+  margin: 0 1px 0 0
+}
+header#header ul > li{
+  margin-right: 1px;
+}
+
+/*end main*/
+
+
+
+/*-------------------------------------------------------------------------------------------
+The form css code below are designed basic from http://twitter.github.com/bootstrap/examples/signin.html*/
+/*User form*/
+.user_form{
+  max-width: 300px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: white;
+  border: 1px solid #E5E5E5;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+}
+
+.user_form input[type="text"], .user_form input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin: 0 0 15px -2px;
+  padding: 7px 9px;
+  width: 94%
+}
+
