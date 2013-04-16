@@ -1,4 +1,12 @@
 RichwebAssignment::Application.routes.draw do
+  get "main/index"
+
+  get "sessions/new"
+
+  get "sessions/create"
+
+  get "sessions/destroy"
+
   resources :users
 
 
@@ -51,7 +59,7 @@ RichwebAssignment::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'main#index'
 
   # See how all your routes lay out with "rake routes"
 
