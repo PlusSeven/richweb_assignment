@@ -24,4 +24,4 @@ gem 'jquery-rails'
 gem 'test-unit'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+ gem 'capistrano'
