@@ -1,0 +1,63 @@
+
+<div class="tabbable">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#basic" data-toggle="tab">Basic info</a></li>
+    <li><a href="#password" data-toggle="tab">Password</a></li>
+  </ul>
+
+  <% if @user.errors.any? %>
+  <div id="error_explanation">
+    <p class="text-error"><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</p>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+      <li class="text-error"><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="tab-content">
+    
+    
+    <div class="tab-pane active" id="basic">
+      
+      <%= form_for(@user) do |f| %>
+      <div class="field">
+        <label for="username">Username:</label>
+        <%= f.text_field :username%>
+      </div>
+      <div class="field">
+        <label for="email">Email:</label>
+        <%= f.text_field :email%>
+      </div>
+      <div class="actions">
+        <p>
+          <%= f.submit "Update", :class => "btn btn-primary"%>
+        </p> 
+      </div>
+      <%end%>
+    </div><!--end tab-pane basic-->
+    
+
+    
+    <div class="tab-pane" id="password">
+      <%= form_for(@user) do |f| %>
+      <div class="field">
+        <label for="password">New Password:</label>
+        <%= f.password_field :password%>
+      </div>
+      <div class="field">
+        <label for="email">Password Comfirmation</label>
+        <%= f.password_field :password_confirmation%>
+      </div>
+      <div class="actions">
+        <p>
+          <%= f.submit "Update", :class => "btn btn-primary"%>
+        </p> 
+      </div>
+      <% end %>
+    </div><!--end tab-pane password-->
+    
+  </div><!--end tab-content-->
+</div> <!--end tabbable-->
+

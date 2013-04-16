@@ -1,12 +1,19 @@
 class UsersController < ApplicationController
+  skip_before_filter :authorize, :only => [:new, :create]
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @username = session[:username]
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @users }
+    if User.check_admin(@username)
+      @users = User.all
+
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @users }
+      end
+    else
+      redirect_to root_url
     end
   end
 
@@ -24,17 +31,25 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
-    @user = User.new
+    if session[:user_id].present?
+      redirect_to root_url #Not appear the signin page if the user has already sign in, prevent the url access
+    else
+      @user = User.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @user }
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @user }
+      end
     end
   end
 
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+
+    if @user.id != session[:user_id]
+      redirect_to root_url
+    end
   end
 
   # POST /users
@@ -44,11 +59,12 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render json: @user, status: :created, location: @user }
+        sign_in @user  # when create, the user is sign in and back to the index page
+        format.html { redirect_to root_url}
+        
       else
         format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        
       end
     end
   end
@@ -60,7 +76,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, notice: 'Successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

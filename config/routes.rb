@@ -1,11 +1,11 @@
 RichwebAssignment::Application.routes.draw do
   get "main/index"
 
-  get "sessions/new"
-
-  get "sessions/create"
-
-  get "sessions/destroy"
+  controller :sessions do
+    get 'signin' => :new
+    post 'signin' => :create
+    get 'logout' => :destroy
+  end
 
   resources :users
 
