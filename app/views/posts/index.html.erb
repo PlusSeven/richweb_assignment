@@ -1,33 +1,138 @@
-<h1>Listing posts</h1>
+<nav>
+    <div class="breadcrumb">
+        <li><a href="/">Home</a> <span class="divider">/</span></li>
+        <li><a href="/forums">Forums</a><span class="divider">/</span></li>
 
-<table>
-  <tr>
-    <th>Text</th>
-    <th>Status</th>
-    <th>User</th>
-    <th>Topic</th>
-    <th>Vote</th>
-    <th>Last user</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+        <li><a href="/forums/<%= @forum.id %>"><%= @forum.name %></a><span class="divider">/</span></li>
+        
+        <li class="active">
+          <%= @topic.subject %>
+        </li>
+    </div>
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.text %></td>
-    <td><%= post.status %></td>
-    <td><%= post.user_id %></td>
-    <td><%= post.topic_id %></td>
-    <td><%= post.vote %></td>
-    <td><%= post.last_user_id %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+    
+</nav>
 
-<br />
+<div class="topic">
+  <%= render "topic" %>
+</div>
 
-<%= link_to 'New Post', new_post_path %>
+<div class="posts">
+  <%= render @posts %>
+</div>
+
+<div class="submit_response" >
+  <div class="forms">
+    
+    <div>
+      <h4 style="margin-left:75px">Add an answer
+      </h4>
+    </div>
+
+    <div class="edit_panel span9" style="margin-top:10px;margin-left:75px">
+      <%= render "form_create"%>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var edit_url = $('.post_button', '.question').attr('href');
+    var update_url = edit_url.replace('/edit','');
+
+    //vote up for the question
+    $(document).on('click','.question > .votecell > .vote > .vote_up', function(){
+      $.ajax({
+        url: update_url,
+        type: 'PUT',
+        data: {'vote[vote]':"up"}
+      })
+      .done(function(vote) {
+        
+        $('.vote_count','.question').html(vote);
+        console.log(vote);
+      })
+      .fail(function() {
+        alert("Vote failed, please try again!");
+      });
+    });
+
+    //vote down for the question
+    $(document).on('click','.question > .votecell > .vote > .vote_down', function(){
+      $.ajax({
+        url: update_url,
+        type: 'PUT',
+        data: {'vote[vote]':"down"}
+      })
+      .done(function(vote) {
+        
+        $('.vote_count','.question').html(vote);
+        console.log(vote);
+      })
+      .fail(function() {
+        alert("Vote failed, please try again!");
+      });
+    });
+
+    //vote up for the answers
+    $(document).on('click','.answers > .votecell > .vote > .vote_up', function(){
+      var answer_id;
+
+      $(this).each(function(key, value){
+          if (key == 0) {
+              answer_id = $(this).text();
+          }
+      });
+      
+      var update_url_post = edit_url.replace('edit', answer_id);
+
+      $.ajax({
+        url: update_url_post,
+        type: 'PUT',
+        data: {'vote[vote]':"up"}
+      })
+      .done(function(vote) {
+        
+        $('.vote_count','#'+answer_id).html(vote);
+        console.log(vote);
+      })
+      .fail(function() {
+        alert("Vote failed, please try again!");
+      });
+      
+    });
+
+    //vote up for the answers
+    $(document).on('click','.answers > .votecell > .vote > .vote_down', function(){
+      var answer_id;
+
+      $(this).each(function(key, value){
+          if (key == 0) {
+              answer_id = $(this).text();
+          }
+      });
+      console.log(answer_id);
+      
+      var update_url_post = edit_url.replace('edit', answer_id);
+
+      $.ajax({
+        url: update_url_post,
+        type: 'PUT',
+        data: {'vote[vote]':"down"}
+      })
+      .done(function(vote) {
+        
+
+        $('.vote_count','#'+answer_id).html(vote);
+        console.log(vote);
+      })
+      .fail(function() {
+        alert("Vote failed, please try again!");
+      });
+    });
+
+
+  });
+</script>

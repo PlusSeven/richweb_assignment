@@ -1,0 +1,40 @@
+<div class='answers row-fluid' id="<%= post.id%>">
+
+       <div class="span1 votecell">
+          <div class="vote">
+            <div class="vote_up"><%= post.id%></div>
+              <span class="vote_count"><%= post.vote ? post.vote : "0" %></span>
+            <div class="vote_down"><%= post.id%></div>
+          </div>
+        </div>
+        
+        <div>
+          <div class="span9 post_block" id="<%= "answer_"+ post.id.to_s %>">
+            <div class="content">
+              <pre><%= post.text %></pre>
+              <div class="edit_post_tag">
+                <cite>
+                     <span class="pull-right"><% if session[:user_id].present? && post.user_id == session[:user_id] %>
+                        <a class="edit post_button" href="/forums/<%= @forum.id%>/<%= @topic.id%>/<%= post.id%>/edit">Edit</a>
+                     <% end %>
+                     <span>
+                </cite>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+          <div class="span2 post_user">
+            <cite>
+              <a href="/users/<%= post.user_id%>"><%= get_created_by_user_post(post) %></a>
+            </cite>
+            <div class="meta">
+              <abbr class="timeago" title="<%= post.created_at %>"><%= post.created_at.strftime('%b %d, %Y %I:%M:%S') %></abbr>
+            </div>
+          </div>
+        
+
+</div>
+
+

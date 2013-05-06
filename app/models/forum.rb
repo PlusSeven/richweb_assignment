@@ -11,4 +11,15 @@ class Forum < ActiveRecord::Base
 		forum.save
 	end
   end
+
+  def self.update_forum_updated_at_post(post)
+    #@forum = Forum.find_by_sql("select distinct(*) from forums join topics on topics.forum_id = forums.id join posts on posts.topic_id = topics.id where posts.topic_id = #{post[:topic_id]}")
+    @topic = Topic.find(:first, :conditions => ["id = ?", post[:topic_id]])
+    @forum = Forum.find(:first, :conditions => ["id = ?", @topic[:forum_id]])
+
+    if !@forum.nil?
+      @forum[:updated_at] = post[:updated_at]
+      @forum.save
+    end
+  end
 end

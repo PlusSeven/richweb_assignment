@@ -22,7 +22,7 @@ class TopicsController < ApplicationController
   # GET /topics/1
   # GET /topics/1.json
   def show
-    @topic = Topic.find(params[:id])
+    @topic = Topic.find(params[:topic_id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -43,7 +43,7 @@ class TopicsController < ApplicationController
 
   # GET /topics/1/edit
   def edit
-    @topic = Topic.find(params[:id])
+    @topic = Topic.find(params[:topic_id])
   end
 
   # POST /topics
@@ -75,7 +75,26 @@ class TopicsController < ApplicationController
   # PUT /topics/1
   # PUT /topics/1.json
   def update
-    @topic = Topic.find(params[:id])
+    @topic = Topic.find(params[:topic_id])
+
+    if params.has_key?(:vote)
+      @vote = params[:vote]
+      @vote_status = @vote[:vote]
+
+      if @vote_status == "up"
+        if @topic.vote.present?
+          @topic.vote = @topic.vote + 1
+        else
+          @topic.vote = 1
+        end
+      elsif @vote_status == "down"
+        if @topic.vote.present?
+          @topic.vote = @topic.vote - 1
+        else
+          @topic.vote = -1
+        end
+      end
+    end
 
     respond_to do |format|
       if @topic.update_attributes(params[:topic])
@@ -83,8 +102,12 @@ class TopicsController < ApplicationController
         Topic.update_last_user_id_topic(@topic)
         Forum.update_forum_updated_at_topic(@topic)
 
-        format.html { redirect_to forum_topics_path}
-        format.json { head :no_content }
+        if params.has_key?(:vote)
+          format.json { render json: @topic.vote.to_json}
+        else
+          format.html { redirect_to forum_topics_path}
+          format.json { head :no_content }
+        end
       else
         format.html { render action: "edit" }
         format.json { render json: @topic.errors, status: :unprocessable_entity }
@@ -95,7 +118,7 @@ class TopicsController < ApplicationController
   # DELETE /topics/1
   # DELETE /topics/1.json
   def destroy
-    @topic = Topic.find(params[:id])
+    @topic = Topic.find(params[:topic_id])
     @topic.destroy
 
     respond_to do |format|

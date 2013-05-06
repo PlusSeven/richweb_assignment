@@ -265,3 +265,36 @@ The styles are based on the some relevant styles in http://stackoverflow.com/
 .post_user{
   margin-bottom: 20px;
 }
+
+/*This styles are from codecademy.com for votes*/
+.vote {
+  float: left;
+  text-align: center;
+  border-right: solid 1px #DDD;
+  left: 0;
+  margin-top:0px;
+}
+
+.vote_up, .vote_down {
+  text-indent: -9999px;
+  width: 0;
+  height: 0;
+  margin: 5px 12px;
+  cursor: pointer;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #555;
+}
+
+.vote_up:hover {
+  border-bottom: 12px solid #999;
+}
+
+.vote_down:hover {
+  border-top: 12px solid #999;
+}
+
+.vote_down {
+  border-bottom: none;
+  border-top: 12px solid #555;
+}

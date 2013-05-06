@@ -1,0 +1,21 @@
+
+<%= form_for @post, :url => forum_topic_post_id_path do |f| %>
+<% if @post.errors.any? %>
+    <div id="error_explanation">
+      <p class="text-error"><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</p>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li class="text-error"><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <textarea cols="200" id="post_text" name="post[text]" rows="5"><%= @post[:text]%></textarea>
+  </div>
+  <div class="actions">
+    <%= f.submit "Update"%>
+  </div>
+<% end %>

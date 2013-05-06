@@ -1,0 +1,42 @@
+<div class='question row-fluid'>
+  			<div class="span1 votecell">
+  				<div class="vote">
+  					<div class="vote_up"></div>
+  						<span class="vote_count"><%= @topic.vote ? @topic.vote : "0" %></span>
+  					<div class="vote_down"></div>
+  				</div>
+  			</div>
+  			
+  			<div>
+  			<div class="span9 post_block">
+			  <div class="content">
+			  	<pre><%= @topic.description %></pre>
+			  	
+			  		<%if @code.present?%>
+			  		<pre>
+		<%= @code.code%>
+					</pre>
+			  			<%end%>
+			  		
+			  	<div class="tag">
+			  		<cite>
+			         <%= link_to_course(@forum.name) %>
+			         <span class="pull-right"><% if session[:user_id].present? && @topic.user_id == session[:user_id] %>
+			            <%= link_to 'Edit', edit_forum_topic_path, :class => "post_button" %>
+			         <% end %><span>
+			    	</cite>
+			    </div>
+			  </div>
+			</div>
+			</div>
+		  
+		  	<div class="span2 post_user">
+			    <cite>
+			      <a href="/users/<%= @topic.user_id%>"><%= get_created_by_user_topic(@topic) %></a>
+			    </cite>
+			    <div class="meta">
+			      <abbr class="timeago" title="<%= @topic.created_at %>"><%= @topic.created_at.strftime('%b %d, %Y %I:%M:%S') %></abbr>
+			    </div>
+			</div>
+		  	
+</div>

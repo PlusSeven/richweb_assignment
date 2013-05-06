@@ -15,4 +15,14 @@ class Topic < ActiveRecord::Base
 
 		topic.save
   end
+
+  def self.update_last_user_id_post(post)
+    @topic = Topic.find(:first, :conditions => ["id = ?", post[:topic_id]])
+  
+    @topic[:last_user_id] = post[:user_id]
+    @topic[:updated_at] = post[:updated_at]
+    @topic.save
+  end
+
+  
 end
