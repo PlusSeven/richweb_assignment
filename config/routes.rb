@@ -1,4 +1,13 @@
 RichwebAssignment::Application.routes.draw do
+  resources :posts
+
+
+  resources :topics
+
+
+  resources :forums
+
+
   resources :sections
 
 

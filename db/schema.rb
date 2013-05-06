@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130506083415) do
+ActiveRecord::Schema.define(:version => 20130506093842) do
 
   create_table "courses", :force => true do |t|
     t.string   "name"
@@ -20,11 +20,40 @@ ActiveRecord::Schema.define(:version => 20130506083415) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "forums", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "posts", :force => true do |t|
+    t.text     "text"
+    t.string   "status"
+    t.integer  "user_id"
+    t.integer  "topic_id"
+    t.integer  "vote"
+    t.integer  "last_user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
   create_table "sections", :force => true do |t|
     t.string   "name"
     t.text     "description"
     t.text     "code"
     t.string   "course_name"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "topics", :force => true do |t|
+    t.string   "subject"
+    t.text     "description"
+    t.string   "status"
+    t.integer  "user_id"
+    t.integer  "forum_id"
+    t.integer  "vote"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
