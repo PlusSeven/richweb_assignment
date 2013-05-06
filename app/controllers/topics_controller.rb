@@ -2,13 +2,22 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.all
-
+    @forum = Forum.find(params[:forum_id]) # for the url in view
+    @topics = Topic.find(:all,:order => "created_at DESC", :conditions => ["forum_id = ?", params[:forum_id]])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @topics }
     end
+
+    #when can't find the forum id with mistype
+    rescue ActiveRecord::RecordNotFound
+      render_404  
   end
+
+  def own
+    @topics = Topic.find(:all, conditions: ["user_id = ?", Integer(params[:user_id])], order: "created_at desc")
+  end
+
 
   # GET /topics/1
   # GET /topics/1.json
@@ -42,9 +51,19 @@ class TopicsController < ApplicationController
   def create
     @topic = Topic.new(params[:topic])
 
+    @topic[:user_id] = session[:user_id]
+    
+    @forum_id = params[:forum_id]
+
+    @topic[:forum_id] = @forum_id
+
     respond_to do |format|
       if @topic.save
-        format.html { redirect_to @topic, notice: 'Topic was successfully created.' }
+        #update last_user_id
+        Topic.update_last_user_id_topic @topic
+        Forum.update_forum_updated_at_topic(@topic)
+
+        format.html { redirect_to forum_topics_path}
         format.json { render json: @topic, status: :created, location: @topic }
       else
         format.html { render action: "new" }
@@ -60,7 +79,11 @@ class TopicsController < ApplicationController
 
     respond_to do |format|
       if @topic.update_attributes(params[:topic])
-        format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
+        #update last_user_id
+        Topic.update_last_user_id_topic(@topic)
+        Forum.update_forum_updated_at_topic(@topic)
+
+        format.html { redirect_to forum_topics_path}
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

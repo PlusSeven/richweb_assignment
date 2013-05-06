@@ -1,5 +1,5 @@
 class Topic < ActiveRecord::Base
-  attr_accessible :description, :forum_id, :status, :subject, :user_id, :vote
+  attr_accessible :last_user_id, :description, :forum_id, :status, :subject, :user_id, :vote
 
   has_many :posts, :dependent => :destroy #when the topic is deleted, all the posts are deleted
   belongs_to :user
@@ -9,4 +9,10 @@ class Topic < ActiveRecord::Base
 
   validates :subject, :presence => true, :uniqueness => true
   validates :description, :presence => true
+
+  def self.update_last_user_id_topic(topic)
+		topic[:last_user_id] = topic[:user_id]
+
+		topic.save
+  end
 end

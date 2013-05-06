@@ -31,7 +31,7 @@ module ForumsHelper
 	      if forum.updated_at.present?
 		      topic_lastest = Topic.find(:first, :conditions => ["updated_at = ?", forum.updated_at])
 		      if topic_lastest.present?     	
-		      	uid = topic_lastest.last_user_id
+		      	uid = topic_lastest["last_user_id"]
 		      	if uid.present?
 		      		user = User.find(:first, :conditions => ["id = ?", uid])
 		      		'by ' + user.username
