@@ -1,3 +1,4 @@
+<!--breadcrumb-->
 <nav>
     <div class="breadcrumb">
         <li><a href="/">Home</a> <span class="divider">/</span></li>
@@ -9,8 +10,6 @@
           <%= @topic.subject %>
         </li>
     </div>
-
-    
 </nav>
 
 <div class="topic">
@@ -21,6 +20,7 @@
   <%= render @posts %>
 </div>
 
+<!--And a new answer-->
 <div class="submit_response" >
   <div class="forms">
     
@@ -39,7 +39,8 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-    var edit_url = $('.post_button', '.question').attr('href');
+    
+    var edit_url = $('.question').attr('id');
     var update_url = edit_url.replace('/edit','');
 
     //vote up for the question
@@ -52,7 +53,7 @@
       .done(function(vote) {
         
         $('.vote_count','.question').html(vote);
-        console.log(vote);
+        //console.log(vote);
       })
       .fail(function() {
         alert("Vote failed, please try again!");
@@ -69,7 +70,7 @@
       .done(function(vote) {
         
         $('.vote_count','.question').html(vote);
-        console.log(vote);
+        //console.log(vote);
       })
       .fail(function() {
         alert("Vote failed, please try again!");
@@ -96,7 +97,7 @@
       .done(function(vote) {
         
         $('.vote_count','#'+answer_id).html(vote);
-        console.log(vote);
+        //console.log(vote);
       })
       .fail(function() {
         alert("Vote failed, please try again!");
@@ -113,7 +114,6 @@
               answer_id = $(this).text();
           }
       });
-      console.log(answer_id);
 
       var update_url_post = edit_url.replace('edit', answer_id);
 
@@ -126,7 +126,7 @@
         
 
         $('.vote_count','#'+answer_id).html(vote);
-        console.log(vote);
+        //console.log(vote);
       })
       .fail(function() {
         alert("Vote failed, please try again!");

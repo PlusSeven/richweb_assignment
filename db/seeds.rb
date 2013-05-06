@@ -1,13 +1,14 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
+#create the admin 
+User.create(username:"Admin",email: "d09124234@mydit.ie", password: "123123")
+
 #create the records for courses
 Course.create(name: "stack",description: "Stack is one of the simplest abstract data types, it has Push and Pop operations with the priciple of Last-In-First-Out.")
 Course.create(name: "queue",description: "Queue is another abstract data type, it has Enqueue and Dequeue operations with the priciple of First-In-First-Out.")
 Course.create(name: "tree",description: "Tree is one of the advanced data structures. Each tree has a parent node with a list of child nodes looks like the hierarchical of a tree.")
 Course.create(name: "bst",description: "Binary search tree is one type of the tree data structure, it has been sorted according to its principles. Click the link to see more details")
-
-
 
 #create sections for stack
 Section.create(name: "Definition", course_name: "stack", description: "A stack is a list with the restriction that inserts and deletes can be performed in only one position, namely the end of the list called the top. The fundamental operations on a stack are push, which is equivalent to an insert, and pop, which deletes the most recently inserted element. The most recently inserted element can be examined prior to performing a pop by use of the top routine.")
@@ -63,7 +64,8 @@ Section.create(name: "Stack Empty", course_name: "stack", description: "Empty is
 	stackP->top = -1;  /* I.e., empty */
 }")
 
-# course name capitalize
+
+# course name capitalized
 Forum.create(name:"Stack",description:"")
 Forum.create(name:"Queue",description:"")
 Forum.create(name:"Tree",description:"")

@@ -1,3 +1,5 @@
+# The sections controller is to control the sections for each course
+
 class SectionsController < ApplicationController
   # GET /sections
   # GET /sections.json

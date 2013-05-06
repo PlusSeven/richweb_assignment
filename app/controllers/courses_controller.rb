@@ -1,4 +1,7 @@
+#This controller file is for the courses and the user can look at the course list before sign in
+
 class CoursesController < ApplicationController
+  
   skip_before_filter :authorize, :only => :index
   # GET /courses
   # GET /courses.json
@@ -14,11 +17,19 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+    #display the courses depend on the sections
+
     @course = Course.find(:first, conditions: ["name=?", params[:name]])
     @sections = Section.find(:all, conditions: ["course_name=?", @course.name])
     @count = 0   
-    #@forum = Forum.find(:first, conditions:["name = ? and category = ?", @course.name.capitalize, "courses"])
-   
+    if @course.name == 'bst'
+      @forum = Forum.find(:first, conditions:["name = ?", "Binary Search Tree"])
+    else
+      @forum = Forum.find(:first, conditions:["name = ?", @course.name.capitalize])
+    end
+
+    @note = Note.find(:first, conditions:["course_id = ? and user_id=?", @course.id,session[:user_id]])
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @course }

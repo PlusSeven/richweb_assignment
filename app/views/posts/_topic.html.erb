@@ -1,4 +1,6 @@
-<div class='question row-fluid'>
+<div class='question row-fluid' id="<%= edit_forum_topic_path%>">
+  			
+			<!--votes for the question-->
   			<div class="span1 votecell">
   				<div class="vote">
   					<div class="vote_up"></div>
@@ -7,29 +9,34 @@
   				</div>
   			</div>
   			
+  			<!--Question content-->
   			<div>
-  			<div class="span9 post_block">
-			  <div class="content">
-			  	<pre><%= @topic.description %></pre>
-			  	
-			  		<%if @code.present?%>
-			  		<pre>
-		<%= @code.code%>
-					</pre>
-			  			<%end%>
-			  		
-			  	<div class="tag">
-			  		<cite>
-			         <%= link_to_course(@forum.name) %>
-			         <span class="pull-right"><% if session[:user_id].present? && @topic.user_id == session[:user_id] %>
-			            <%= link_to 'Edit', edit_forum_topic_path, :class => "post_button" %>
-			         <% end %><span>
-			    	</cite>
-			    </div>
-			  </div>
-			</div>
+	  			<div class="span9 post_block">
+				  <div class="content">
+				  	<pre><%= @topic.description %></pre>
+				  	
+				  		<%if @code.present?%>
+				  		<pre>
+							<%= @code.code%>
+						</pre>
+				  			<%end%>
+				  		
+				  	<div class="tag">
+				  		<cite>
+				         <%= link_to_course(@forum.name) %>
+				         <span class="pull-right">
+				           <% if session[:user_id].present? && @topic.user_id == session[:user_id] %>
+				            <%= link_to 'Edit', edit_forum_topic_path, :class => "post_button" %>
+				           <%end%>
+
+				           <span>
+				    	</cite>
+				    </div>
+				  </div>
+				</div>
 			</div>
 		  
+		  	<!--Question author-->
 		  	<div class="span2 post_user">
 			    <cite>
 			      <a href="/users/<%= @topic.user_id%>"><%= get_created_by_user_topic(@topic) %></a>

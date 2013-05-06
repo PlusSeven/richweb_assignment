@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
 
   validate :password_must_be_present
 
+  #This method is the authenticate the users through the username and the password
   class << self
     def User.authenticate(username, password)
     	@username = username
@@ -33,6 +34,7 @@ class User < ActiveRecord::Base
     end
   end
 
+  # This method is to encrypt the password using a key namend salt
   def User.encrypt_password(password, salt)
     Digest::SHA2.hexdigest(password + "wibble" + salt)
   end
@@ -52,7 +54,7 @@ class User < ActiveRecord::Base
   end
   
   private
-
+  
     def password_must_be_present
       errors.add(:password, "Missing password") unless hashed_password.present?
     end

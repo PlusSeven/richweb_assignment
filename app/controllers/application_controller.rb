@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  #need authorize the users before most of the pages
   before_filter :authorize
   
   protect_from_forgery

@@ -1,15 +1,17 @@
 module TopicsHelper
-
+	# get the post number
 	def topic_post_number(topic)
 		posts  = topic_posts_count(topic) #topic.posts_count
 		number_to_human posts
 	end
 
+	# get the topic number
 	def topic_posts_count(topic)
 		posts = Post.find_by_sql("select * from posts where topic_id = #{topic.id}")
 		posts.count
 	end
 
+	# Get the status of the topic
 	def topic_status(topic)
 		if topic.status == 'Solved'
 			"[#{topic.status}]"

@@ -1,4 +1,7 @@
+#This controller is for the forums, the forums are created by admin already
+
 class ForumsController < ApplicationController
+
   # GET /forums
   # GET /forums.json
   def index

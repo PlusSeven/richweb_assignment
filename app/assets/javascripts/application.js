@@ -12,5 +12,14 @@
 //
 //require jquery
 //= require jquery_ujs
-//= require_tree .
+// require_tree .
 //=require bootstrap
+
+//=require _stack_edgePreload.js
+//=require _queue_edgePreload.js
+//=require _tree_edgePreload.js
+//=require edge.1.5.0.min.js
+//=require _btree_edgePreload.js
+
+//=require course.js
+

@@ -1,4 +1,5 @@
 module PostsHelper
+	#This method is to get the author of the answer for one question
 	def get_created_by_user_post(post)
 		text = ''
 
@@ -16,7 +17,8 @@ module PostsHelper
 		text
 	end
 
-
+	#This method is to get the link for the topic with the answer id
+	#It can go to place of the answer through "My Answers"
 	def link_to_topic_with_post_id(post)
 		link_text = ''
 
@@ -42,6 +44,7 @@ module PostsHelper
 	      link_text
 	end
 
+	# This method is to get the post content in a limited length
 	def get_post_content(post)
 		text = ''
 
@@ -57,6 +60,7 @@ module PostsHelper
 		end
 	end
 
+	#get the number of posts
 	def posts_count(posts)
 
 		if posts.nil?

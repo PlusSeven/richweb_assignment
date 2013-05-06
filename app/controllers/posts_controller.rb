@@ -1,10 +1,14 @@
+#This controller is for the posts which are answers for the questions
+
 class PostsController < ApplicationController
-  # GET /posts
-  # GET /posts.json
+  
   def index
+    #Get the information about the current topic and posts
     @forum = Forum.find(:first, conditions: ["id = ?", params[:forum_id]])
     @topic = Topic.find(:first, conditions: ["id = ?", params[:topic_id]])
-    @posts = Post.find(:all, conditions: ["topic_id = ?", @topic.id])
+    
+    #The order of answers are displayed according to the votes
+    @posts = Post.find(:all, :order => "vote DESC", conditions: ["topic_id = ?", @topic.id])
     
     
     @post = Post.new
@@ -15,11 +19,10 @@ class PostsController < ApplicationController
   end
 
   def own
+    #Get my answers and display all the answers
     @posts = Post.find(:all, conditions: ["user_id = ?", session[:user_id]], order: "updated_at desc")
   end
 
-  # GET /posts/1
-  # GET /posts/1.json
   def show
     @post = Post.find(params[:post_id])
 
@@ -29,8 +32,6 @@ class PostsController < ApplicationController
     end
   end
 
-  # GET /posts/new
-  # GET /posts/new.json
   def new
     @post = Post.new
 
@@ -40,25 +41,24 @@ class PostsController < ApplicationController
     end
   end
 
-  # GET /posts/1/edit
+
   def edit
     @post = Post.find(params[:post_id])
   end
 
-  # POST /posts
-  # POST /posts.json
   def create
     @post = Post.new(params[:post])
 
-#create with the user_id, topic_id
+    #create with the user_id, topic_id
     @post[:user_id] = session[:user_id]
     @post[:topic_id] = params[:topic_id]
 
     respond_to do |format|
       if @post.save
-        #update last_user_id
-    Topic.update_last_user_id_post(@post)
-    Forum.update_forum_updated_at_post(@post)
+        #update last_user_id and the time for the forum
+        Topic.update_last_user_id_post(@post)
+        Forum.update_forum_updated_at_post(@post)
+
         format.html { redirect_to forum_topic_posts_path, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
@@ -68,11 +68,10 @@ class PostsController < ApplicationController
     end
   end
 
-  # PUT /posts/1
-  # PUT /posts/1.json
   def update
     @post = Post.find(params[:post_id])
 
+    #Check if pass any values of status
     if params.has_key?(:status)
       status = @post.update_attributes(params[:status])
       @topic = Topic.find(params[:topic_id])
@@ -81,14 +80,15 @@ class PostsController < ApplicationController
       status = @post.update_attributes(params[:post])
     end
 
-    
-      
+    #Check if pass any paramsters of votes when user vote up or vote down the answers      
     if params.has_key?(:vote)
       @vote = params[:vote]
       @vote_status = @vote[:vote]
 
+      #Check if the user has already vote up or vote down the answer
       @vote_topic = Vote.find(:first, conditions: ["user_id = ? and post_id = ?", session[:user_id],@post.id])
       if @vote_topic.nil?
+        #if the user is new to vote, vote up to add one and vote down to decrese one
         if @vote_status == "up"
           if @post.vote.present?
             @post.vote = @post.vote + 1
@@ -103,6 +103,7 @@ class PostsController < ApplicationController
           end
         end
 
+        #track the user for his votes
         @vote_topic_new = Vote.new
         @vote_topic_new.user_id = session[:user_id]
         @vote_topic_new.post_id = @post.id
@@ -115,11 +116,12 @@ class PostsController < ApplicationController
 
 
     respond_to do |format|
-      #update last_user_id
-    Topic.update_last_user_id_post(@post)
-    Forum.update_forum_updated_at_post(@post)
+      #update last_user_id for the post and the forum updated time
+      Topic.update_last_user_id_post(@post)
+      Forum.update_forum_updated_at_post(@post)
       if status
         if params.has_key?(:vote)
+          #if the user vote the answer, send back the current votes
           format.json { render json: @post.vote.to_json} 
         else
           format.html { redirect_to forum_topic_posts_path}
@@ -133,8 +135,6 @@ class PostsController < ApplicationController
     end
   end
 
-  # DELETE /posts/1
-  # DELETE /posts/1.json
   def destroy
     @post = Post.find(params[:post_id])
     @post.destroy

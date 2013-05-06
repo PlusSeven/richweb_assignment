@@ -12,6 +12,7 @@ class Topic < ActiveRecord::Base
   validates :subject, :presence => true, :uniqueness => true
   validates :description, :presence => true
 
+  #The two methods below are to update the last user id in topic table when the topics and the relevant posts are updated
   def self.update_last_user_id_topic(topic)
 		topic[:last_user_id] = topic[:user_id]
 

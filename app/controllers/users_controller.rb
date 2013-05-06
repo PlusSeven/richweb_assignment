@@ -1,3 +1,4 @@
+#This file is to controller the users, the user can sign up and operate the profile after sign in
 class UsersController < ApplicationController
   skip_before_filter :authorize, :only => [:new, :create]
   # GET /users

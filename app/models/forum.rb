@@ -3,6 +3,8 @@ class Forum < ActiveRecord::Base
 
   has_many :topics, :dependent => :destroy # when the forum delete, all topics are deleted
 
+  # TThese two methods are to update the forum updated_at time, which can display in the forums page
+  
   def self.update_forum_updated_at_topic(topic)
 	forum = Forum.find(:first, :conditions => ["id = ?", topic[:forum_id]])
 
@@ -11,6 +13,7 @@ class Forum < ActiveRecord::Base
 		forum.save
 	end
   end
+
 
   def self.update_forum_updated_at_post(post)
     #@forum = Forum.find_by_sql("select distinct(*) from forums join topics on topics.forum_id = forums.id join posts on posts.topic_id = topics.id where posts.topic_id = #{post[:topic_id]}")

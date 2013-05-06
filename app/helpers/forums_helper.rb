@@ -49,11 +49,13 @@ module ForumsHelper
 	    end
 	end
 
+	#This method is to get the number of topics for one forum
 	def forum_topics_count(forum)
 		topics = Topic.find_by_sql("select * from topics where forum_id = #{forum.id}")
 		topics.count
 	end
 
+	#This method is to get the number of posts for one topic
 	def forum_posts_count(forum)
 		posts = Post.find_by_sql("select * from posts join topics on posts.topic_id = topics.id where forum_id = #{forum.id}")
 		posts.count

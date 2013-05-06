@@ -1,3 +1,4 @@
+<!--Display the breadcumb-->
 <ul class="breadcrumb">
         <li><a href="/">Home</a> <span class="divider">/</span></li>
         <li><a href="/courses">Learn Courses</a> <span class="divider">/</span></li>
@@ -36,10 +37,26 @@
     </div><!--end-->
   </div><!--end span-->
   
-  <div class="span6">
+   <div class="span6">
     <legend>Animation
-    
+    <%if @forum.present?%>	
+    	<a class="btn btn-danger forum pull-right" href="/forums/<%=@forum.id%>">Q&A Forum</a>
+    <%end%>
   </legend>
+    
+<%if @course[:name] == "bst"%>
+  <%= render 'courses/animations/btree'%>
+<%else%>
+  <%= render 'courses/animations/'+ @course[:name] %>
+<%end%>
+
+  <div id="notes">
+    <legend>Notes</legend>
+    <div><p class="text-success" id="notice"></p></div>
+<textarea class="content" style="width:98%" rows="5"><%= @note.content if @note.present?%>  
+</textarea> 
+<a class="btn btn-primary notes" id="<%= @note.id if @note.present?%>">Add/Update</a>
+  </div>
     
 
 

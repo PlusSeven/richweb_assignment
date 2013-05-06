@@ -1,0 +1,1290 @@
+<!--The animaiton code is create by  Adobe Edge animation-->
+
+<!--_btree_edge.js-->
+<script type="text/javascript" charset="utf-8">
+/**
+ * Adobe Edge: symbol definitions
+ */
+(function($, Edge, compId){
+//images folder
+var im='images/';
+
+var fonts = {};
+
+
+var resources = [
+];
+var symbols = {
+"stage": {
+   version: "1.5.0",
+   minimumCompatibleVersion: "1.5.0",
+   build: "1.5.0.217",
+   baseState: "Base State",
+   initialState: "Base State",
+   gpuAccelerate: false,
+   resizeInstances: false,
+   content: {
+         dom: [
+         {
+            id:'Ellipse',
+            type:'ellipse',
+            rect:['110px','61px','25px','24px','auto','auto'],
+            borderRadius:["50%","50%","50%","50%"],
+            fill:["rgba(255,255,255,1)"],
+            stroke:[6,"rgba(251,0,0,1.00)","solid"]
+         },
+         {
+            id:'A',
+            type:'rect',
+            rect:['13','25','auto','auto','auto','auto']
+         },
+         {
+            id:'ButtonCreate',
+            type:'rect',
+            rect:['27','246','auto','auto','auto','auto']
+         },
+         {
+            id:'B',
+            type:'rect',
+            rect:['47','25','auto','auto','auto','auto']
+         },
+         {
+            id:'C',
+            type:'rect',
+            rect:['82','25','auto','auto','auto','auto']
+         },
+         {
+            id:'E',
+            type:'rect',
+            rect:['150','25','auto','auto','auto','auto']
+         },
+         {
+            id:'D',
+            type:'rect',
+            rect:['115','25','auto','auto','auto','auto']
+         },
+         {
+            id:'F',
+            type:'rect',
+            rect:['188','25','auto','auto','auto','auto']
+         },
+         {
+            id:'G',
+            type:'rect',
+            rect:['224','25','auto','auto','auto','auto']
+         },
+         {
+            id:'Rectangle',
+            type:'rect',
+            rect:['77px','100px','45px','0px','auto','auto'],
+            fill:["rgba(255,255,255,1)"],
+            stroke:[1,"rgb(0, 0, 0)","solid"],
+            transform:[[],['-40']]
+         },
+         {
+            id:'Rectangle2',
+            type:'rect',
+            rect:['127px','92px','0px','33px','auto','auto'],
+            fill:["rgba(255,255,255,1)"],
+            stroke:[1,"rgb(0, 0, 0)","solid"]
+         },
+         {
+            id:'Rectangle3',
+            type:'rect',
+            rect:['142px','86px','52px','0px','auto','auto'],
+            fill:["rgba(255,255,255,1)"],
+            stroke:[1,"rgb(0, 0, 0)","solid"]
+         },
+         {
+            id:'Rectangle4',
+            type:'rect',
+            rect:['129px','145px','0px','50px','auto','auto'],
+            fill:["rgba(255,255,255,1)"],
+            stroke:[1,"rgb(0, 0, 0)","solid"]
+         },
+         {
+            id:'Rectangle5',
+            type:'rect',
+            rect:['157px','137px','0px','50px','auto','auto'],
+            fill:["rgba(255,255,255,1)"],
+            stroke:[1,"rgb(0, 0, 0)","solid"]
+         },
+         {
+            id:'Rectangle6',
+            type:'rect',
+            rect:['170px','129px','0px','97px','auto','auto'],
+            fill:["rgba(255,255,255,1)"],
+            stroke:[1,"rgb(0, 0, 0)","solid"]
+         },
+         {
+            id:'Delete',
+            type:'rect',
+            rect:['224','240','auto','auto','auto','auto']
+         },
+         {
+            id:'Search',
+            type:'rect',
+            rect:['140','240','auto','auto','auto','auto']
+         },
+         {
+            id:'Text3',
+            type:'text',
+            rect:['22px','11px','auto','auto','auto','auto'],
+            text:"Searching for 5",
+            align:"left",
+            font:['Arial, Helvetica, sans-serif',12,"rgba(0,0,0,1.00)","normal","none","normal"]
+         },
+         {
+            id:'Text4',
+            type:'text',
+            rect:['22','34','auto','auto','auto','auto'],
+            text:"Current node:",
+            align:"left",
+            font:['Arial, Helvetica, sans-serif',12,"rgba(0,0,0,1)","normal","none","normal"]
+         },
+         {
+            id:'Text5',
+            type:'text',
+            rect:['106','34','auto','auto','auto','auto'],
+            text:"2 &lt; 5 ",
+            align:"left",
+            font:['Arial, Helvetica, sans-serif',12,"rgba(0,0,0,1)","normal","none","normal"]
+         },
+         {
+            id:'Text7',
+            type:'text',
+            rect:['105px','34px','31px','15px','auto','auto'],
+            text:"4 &lt; 5",
+            align:"left",
+            font:['Arial, Helvetica, sans-serif',12,"rgba(0,0,0,1)","normal","none","normal"]
+         },
+         {
+            id:'Text8',
+            type:'text',
+            rect:['106px','34px','37px','15px','auto','auto'],
+            text:"6 &gt; 5",
+            align:"left",
+            font:['Arial, Helvetica, sans-serif',12,"rgba(0,0,0,1)","normal","none","normal"]
+         },
+         {
+            id:'Text10',
+            type:'text',
+            rect:['106px','34px','37px','15px','auto','auto'],
+            text:"5 = 5",
+            align:"left",
+            font:['Arial, Helvetica, sans-serif',12,"rgba(0,0,0,1)","normal","none","normal"]
+         },
+         {
+            id:'Text6',
+            type:'text',
+            rect:['147','34','auto','auto','auto','auto'],
+            text:"search right sub-tree",
+            align:"left",
+            font:['Arial, Helvetica, sans-serif',12,"rgba(0,0,0,1)","normal","none","normal"]
+         },
+         {
+            id:'Text9',
+            type:'text',
+            rect:['147px','34px','114px','15px','auto','auto'],
+            text:"search left sub-tree",
+            align:"left",
+            font:['Arial, Helvetica, sans-serif',12,"rgba(0,0,0,1)","normal","none","normal"]
+         },
+         {
+            id:'Text11',
+            type:'text',
+            rect:['147px','35px','93px','15px','auto','auto'],
+            text:"BST has 5",
+            align:"left",
+            font:['Arial, Helvetica, sans-serif',12,"rgba(0,0,0,1)","normal","none","normal"]
+         },
+         {
+            id:'Text13',
+            type:'text',
+            rect:['22px','34px','145px','15px','auto','auto'],
+            text:"5 has been deleted",
+            align:"left",
+            font:['Arial, Helvetica, sans-serif',12,"rgba(0,0,0,1)","normal","none","normal"]
+         }],
+         symbolInstances: [
+         {
+            id:'A',
+            symbolName:'A'
+         },
+         {
+            id:'Delete',
+            symbolName:'Delete'
+         },
+         {
+            id:'C',
+            symbolName:'C'
+         },
+         {
+            id:'B',
+            symbolName:'B'
+         },
+         {
+            id:'E',
+            symbolName:'E'
+         },
+         {
+            id:'D',
+            symbolName:'D'
+         },
+         {
+            id:'G',
+            symbolName:'G'
+         },
+         {
+            id:'ButtonCreate',
+            symbolName:'ButtonCreate'
+         },
+         {
+            id:'Search',
+            symbolName:'Search'
+         },
+         {
+            id:'F',
+            symbolName:'F'
+         }
+         ]
+      },
+   states: {
+      "Base State": {
+         "${_G}": [
+            ["style", "left", '224px'],
+            ["style", "top", '25px']
+         ],
+         "${_Rectangle2}": [
+            ["style", "top", '88px'],
+            ["transform", "rotateZ", '-31deg'],
+            ["style", "height", '21px'],
+            ["style", "opacity", '0'],
+            ["style", "left", '139px'],
+            ["style", "width", '0px']
+         ],
+         "${_Text7}": [
+            ["style", "opacity", '0'],
+            ["style", "width", '31px']
+         ],
+         "${_C}": [
+            ["style", "left", '82px'],
+            ["style", "top", '25px']
+         ],
+         "${_Text3}": [
+            ["style", "top", '11px'],
+            ["style", "opacity", '0'],
+            ["style", "left", '22px'],
+            ["color", "color", 'rgba(0,0,0,1.00)']
+         ],
+         "${_Text13}": [
+            ["style", "top", '11px'],
+            ["style", "opacity", '0'],
+            ["style", "left", '23px'],
+            ["style", "width", '145px']
+         ],
+         "${_Text5}": [
+            ["style", "opacity", '0']
+         ],
+         "${_Text11}": [
+            ["style", "top", '35px'],
+            ["style", "opacity", '0'],
+            ["style", "left", '147px']
+         ],
+         "${_Text10}": [
+            ["style", "top", '34px'],
+            ["style", "opacity", '0'],
+            ["style", "left", '106px']
+         ],
+         "${_Rectangle5}": [
+            ["style", "top", '167px'],
+            ["transform", "rotateZ", '28deg'],
+            ["style", "height", '28px'],
+            ["style", "opacity", '0'],
+            ["style", "left", '162px']
+         ],
+         "${_Text8}": [
+            ["style", "left", '106px'],
+            ["style", "opacity", '0']
+         ],
+         "${_B}": [
+            ["style", "left", '47px'],
+            ["style", "top", '25px']
+         ],
+         "${_Rectangle}": [
+            ["style", "-webkit-transform-origin", [50,0], {valueTemplate:'@@0@@% @@1@@%'} ],
+            ["style", "-moz-transform-origin", [50,0],{valueTemplate:'@@0@@% @@1@@%'}],
+            ["style", "-ms-transform-origin", [50,0],{valueTemplate:'@@0@@% @@1@@%'}],
+            ["style", "msTransformOrigin", [50,0],{valueTemplate:'@@0@@% @@1@@%'}],
+            ["style", "-o-transform-origin", [50,0],{valueTemplate:'@@0@@% @@1@@%'}],
+            ["style", "top", '98px'],
+            ["style", "height", '0px'],
+            ["transform", "rotateZ", '-53deg'],
+            ["transform", "scaleX", '0.93442'],
+            ["style", "opacity", '0'],
+            ["style", "left", '100px'],
+            ["style", "width", '24px']
+         ],
+         "${_Rectangle4}": [
+            ["style", "top", '127px'],
+            ["transform", "rotateZ", '142deg'],
+            ["style", "height", '23px'],
+            ["style", "opacity", '0'],
+            ["style", "left", '164px']
+         ],
+         "${_Text4}": [
+            ["style", "opacity", '0']
+         ],
+         "${_ButtonCreate}": [
+            ["style", "top", '239px']
+         ],
+         "${_Ellipse}": [
+            ["style", "top", '61px'],
+            ["style", "opacity", '0'],
+            ["color", "border-color", 'rgba(251,0,0,1.00)'],
+            ["style", "left", '110px'],
+            ["style", "border-width", '6px']
+         ],
+         "${_A}": [
+            ["style", "left", '13px'],
+            ["style", "top", '25px']
+         ],
+         "${_Delete}": [
+            ["style", "opacity", '0']
+         ],
+         "${_Rectangle6}": [
+            ["style", "top", '163px'],
+            ["transform", "scaleY", '1.0202'],
+            ["transform", "rotateZ", '-47deg'],
+            ["style", "height", '36px'],
+            ["style", "opacity", '0'],
+            ["style", "left", '203px'],
+            ["style", "width", '0px']
+         ],
+         "${_Text6}": [
+            ["style", "opacity", '0']
+         ],
+         "${_Rectangle3}": [
+            ["style", "top", '137px'],
+            ["transform", "rotateZ", '124deg'],
+            ["style", "height", '0px'],
+            ["style", "opacity", '0'],
+            ["style", "left", '120px'],
+            ["style", "width", '23px']
+         ],
+         "${_D}": [
+            ["style", "left", '115px'],
+            ["style", "top", '25px']
+         ],
+         "${_Search}": [
+            ["style", "opacity", '0']
+         ],
+         "${_Stage}": [
+            ["color", "background-color", 'rgba(255,255,255,1)'],
+            ["style", "overflow", 'hidden'],
+            ["style", "height", '300px'],
+            ["style", "width", '300px']
+         ],
+         "${_Text9}": [
+            ["style", "top", '34px'],
+            ["style", "opacity", '0'],
+            ["style", "left", '147px']
+         ],
+         "${_E}": [
+            ["style", "top", '25px'],
+            ["style", "left", '150px']
+         ],
+         "${_F}": [
+            ["style", "top", '25px'],
+            ["style", "opacity", '1'],
+            ["style", "left", '188px']
+         ]
+      }
+   },
+   timelines: {
+      "Default Timeline": {
+         fromState: "Base State",
+         toState: "",
+         duration: 14000,
+         autoPlay: true,
+         labels: {
+            "start": 0,
+            "end": 10000,
+            "search": 10500,
+            "endsearch": 14000
+         },
+         timeline: [
+            { id: "eid219", tween: [ "style", "${_Rectangle5}", "height", '28px', { fromValue: '28px'}], position: 8500, duration: 0 },
+            { id: "eid40", tween: [ "style", "${_F}", "top", '193px', { fromValue: '25px'}], position: 7000, duration: 1000 },
+            { id: "eid162", tween: [ "style", "${_Rectangle}", "left", '100px', { fromValue: '100px'}], position: 2500, duration: 0 },
+            { id: "eid20", tween: [ "style", "${_C}", "left", '136px', { fromValue: '82px'}], position: 2500, duration: 1000 },
+            { id: "eid32", tween: [ "style", "${_E}", "left", '165px', { fromValue: '150px'}], position: 5500, duration: 1000 },
+            { id: "eid165", tween: [ "transform", "${_Rectangle}", "rotateZ", '-53deg', { fromValue: '-53deg'}], position: 2500, duration: 0 },
+            { id: "eid39", tween: [ "style", "${_F}", "left", '136px', { fromValue: '188px'}], position: 7000, duration: 1000 },
+            { id: "eid197", tween: [ "style", "${_Rectangle3}", "top", '137px', { fromValue: '137px'}], position: 5500, duration: 0 },
+            { id: "eid215", tween: [ "transform", "${_Rectangle4}", "rotateZ", '142deg', { fromValue: '142deg'}], position: 7000, duration: 0 },
+            { id: "eid4", tween: [ "style", "${_A}", "top", '51px', { fromValue: '25px'}], position: 0, duration: 240 },
+            { id: "eid7", tween: [ "style", "${_A}", "top", '58px', { fromValue: '51px'}], position: 240, duration: 260 },
+            { id: "eid6", tween: [ "style", "${_A}", "top", '66px', { fromValue: '58px'}], position: 500, duration: 500 },
+            { id: "eid270", tween: [ "style", "${_Ellipse}", "top", '102px', { fromValue: '61px'}], position: 11000, duration: 1000 },
+            { id: "eid273", tween: [ "style", "${_Ellipse}", "top", '142px', { fromValue: '102px'}], position: 12000, duration: 1000 },
+            { id: "eid275", tween: [ "style", "${_Ellipse}", "top", '188px', { fromValue: '142px'}], position: 13000, duration: 1000 },
+            { id: "eid313", tween: [ "style", "${_Text11}", "opacity", '1', { fromValue: '0.000000'}], position: 13959, duration: 41 },
+            { id: "eid266", tween: [ "style", "${_Ellipse}", "opacity", '1', { fromValue: '0'}], position: 10500, duration: 500 },
+            { id: "eid31", tween: [ "style", "${_E}", "top", '147px', { fromValue: '25px'}], position: 5500, duration: 1000 },
+            { id: "eid66", tween: [ "style", "${_Rectangle4}", "opacity", '1', { fromValue: '0.000000'}], position: 6500, duration: 500 },
+            { id: "eid44", tween: [ "style", "${_G}", "left", '210px', { fromValue: '224px'}], position: 8500, duration: 1000 },
+            { id: "eid220", tween: [ "transform", "${_Rectangle6}", "rotateZ", '-47deg', { fromValue: '-47deg'}], position: 10000, duration: 0 },
+            { id: "eid33", tween: [ "style", "${_ButtonCreate}", "top", '239px', { fromValue: '239px'}], position: 6500, duration: 0 },
+            { id: "eid235", tween: [ "style", "${_Rectangle6}", "top", '163px', { fromValue: '163px'}], position: 9500, duration: 500 },
+            { id: "eid188", tween: [ "transform", "${_Rectangle3}", "rotateZ", '124deg', { fromValue: '124deg'}], position: 5500, duration: 0 },
+            { id: "eid257", tween: [ "style", "${_Text6}", "opacity", '1', { fromValue: '0.000000'}], position: 10500, duration: 500 },
+            { id: "eid300", tween: [ "style", "${_Text6}", "opacity", '0', { fromValue: '1'}], position: 12954, duration: 46 },
+            { id: "eid245", tween: [ "style", "${_Search}", "opacity", '1', { fromValue: '0.000000'}], position: 9500, duration: 500 },
+            { id: "eid58", tween: [ "style", "${_Rectangle2}", "opacity", '1', { fromValue: '0.000000'}], position: 3500, duration: 500 },
+            { id: "eid216", tween: [ "transform", "${_Rectangle5}", "rotateZ", '28deg', { fromValue: '28deg'}], position: 8500, duration: 0 },
+            { id: "eid182", tween: [ "style", "${_Rectangle2}", "height", '21px', { fromValue: '21px'}], position: 4000, duration: 0 },
+            { id: "eid200", tween: [ "style", "${_Rectangle3}", "width", '23px', { fromValue: '23px'}], position: 5500, duration: 0 },
+            { id: "eid170", tween: [ "style", "${_Rectangle}", "width", '24px', { fromValue: '24px'}], position: 2500, duration: 0 },
+            { id: "eid303", tween: [ "style", "${_Text10}", "opacity", '1', { fromValue: '0'}], position: 13959, duration: 41 },
+            { id: "eid198", tween: [ "style", "${_Rectangle3}", "left", '120px', { fromValue: '120px'}], position: 5500, duration: 0 },
+            { id: "eid21", tween: [ "style", "${_C}", "top", '107px', { fromValue: '25px'}], position: 2500, duration: 1000 },
+            { id: "eid181", tween: [ "style", "${_Rectangle2}", "left", '139px', { fromValue: '139px'}], position: 4000, duration: 0 },
+            { id: "eid271", tween: [ "style", "${_Ellipse}", "left", '131px', { fromValue: '110px'}], position: 11000, duration: 1000 },
+            { id: "eid272", tween: [ "style", "${_Ellipse}", "left", '160px', { fromValue: '131px'}], position: 12000, duration: 1000 },
+            { id: "eid274", tween: [ "style", "${_Ellipse}", "left", '131px', { fromValue: '160px'}], position: 13000, duration: 1000 },
+            { id: "eid179", tween: [ "style", "${_Rectangle2}", "top", '88px', { fromValue: '88px'}], position: 4000, duration: 0 },
+            { id: "eid217", tween: [ "style", "${_Rectangle5}", "left", '162px', { fromValue: '162px'}], position: 8500, duration: 0 },
+            { id: "eid17", tween: [ "style", "${_Rectangle}", "opacity", '1', { fromValue: '0.000000'}], position: 2000, duration: 500 },
+            { id: "eid62", tween: [ "style", "${_Rectangle3}", "opacity", '1', { fromValue: '0.000000'}], position: 5000, duration: 500 },
+            { id: "eid26", tween: [ "style", "${_D}", "top", '147px', { fromValue: '25px'}], position: 4000, duration: 1000 },
+            { id: "eid291", tween: [ "style", "${_Text7}", "opacity", '1', { fromValue: '1'}], position: 12000, duration: 0 },
+            { id: "eid294", tween: [ "style", "${_Text7}", "opacity", '0', { fromValue: '1'}], position: 12954, duration: 46 },
+            { id: "eid3", tween: [ "style", "${_A}", "left", '42px', { fromValue: '13px'}], position: 0, duration: 500 },
+            { id: "eid5", tween: [ "style", "${_A}", "left", '115px', { fromValue: '42px'}], position: 500, duration: 500 },
+            { id: "eid25", tween: [ "style", "${_D}", "left", '105px', { fromValue: '115px'}], position: 4000, duration: 1000 },
+            { id: "eid318", tween: [ "style", "${_Text9}", "opacity", '1', { fromValue: '0.000000'}], position: 12954, duration: 46 },
+            { id: "eid321", tween: [ "style", "${_Text9}", "opacity", '0', { fromValue: '1'}], position: 13959, duration: 41 },
+            { id: "eid171", tween: [ "transform", "${_Rectangle2}", "rotateZ", '-31deg', { fromValue: '-31deg'}], position: 4000, duration: 0 },
+            { id: "eid43", tween: [ "style", "${_G}", "top", '193px', { fromValue: '25px'}], position: 8500, duration: 1000 },
+            { id: "eid297", tween: [ "style", "${_Text8}", "opacity", '1', { fromValue: '0'}], position: 12954, duration: 46 },
+            { id: "eid309", tween: [ "style", "${_Text8}", "opacity", '0', { fromValue: '1'}], position: 13959, duration: 41 },
+            { id: "eid164", tween: [ "style", "${_Rectangle}", "top", '98px', { fromValue: '98px'}], position: 2500, duration: 0 },
+            { id: "eid75", tween: [ "style", "${_Rectangle6}", "opacity", '1', { fromValue: '0.000000'}], position: 9500, duration: 500 },
+            { id: "eid236", tween: [ "style", "${_Rectangle6}", "left", '203px', { fromValue: '203px'}], position: 9500, duration: 0 },
+            { id: "eid237", tween: [ "style", "${_Rectangle6}", "left", '203px', { fromValue: '203px'}], position: 10000, duration: 0 },
+            { id: "eid106", tween: [ "transform", "${_Rectangle6}", "scaleY", '1.0202', { fromValue: '1.0202'}], position: 10000, duration: 0 },
+            { id: "eid10", tween: [ "style", "${_B}", "left", '87px', { fromValue: '47px'}], position: 1000, duration: 1000 },
+            { id: "eid213", tween: [ "style", "${_Rectangle4}", "left", '164px', { fromValue: '164px'}], position: 7000, duration: 0 },
+            { id: "eid212", tween: [ "style", "${_Rectangle4}", "top", '127px', { fromValue: '127px'}], position: 7000, duration: 0 },
+            { id: "eid225", tween: [ "style", "${_Rectangle6}", "width", '0px', { fromValue: '0px'}], position: 10000, duration: 0 },
+            { id: "eid259", tween: [ "style", "${_Text4}", "opacity", '1', { fromValue: '0'}], position: 10500, duration: 500 },
+            { id: "eid233", tween: [ "style", "${_Rectangle6}", "height", '36px', { fromValue: '36px'}], position: 10000, duration: 0 },
+            { id: "eid71", tween: [ "style", "${_Rectangle5}", "opacity", '1', { fromValue: '0.000000'}], position: 8000, duration: 500 },
+            { id: "eid218", tween: [ "style", "${_Rectangle5}", "top", '167px', { fromValue: '167px'}], position: 8500, duration: 0 },
+            { id: "eid250", tween: [ "style", "${_Text3}", "opacity", '1', { fromValue: '0'}], position: 10500, duration: 0 },
+            { id: "eid258", tween: [ "style", "${_Text5}", "opacity", '1', { fromValue: '0'}], position: 10500, duration: 500 },
+            { id: "eid284", tween: [ "style", "${_Text5}", "opacity", '0', { fromValue: '1'}], position: 12000, duration: 0 },
+            { id: "eid207", tween: [ "style", "${_Rectangle4}", "height", '23px', { fromValue: '23px'}], position: 7000, duration: 0 },
+            { id: "eid11", tween: [ "style", "${_B}", "top", '107px', { fromValue: '25px'}], position: 1000, duration: 1000 }         ]
+      }
+   }
+},
+"CreateButton": {
+   version: "1.5.0",
+   minimumCompatibleVersion: "1.5.0",
+   build: "1.5.0.217",
+   baseState: "Base State",
+   initialState: "Base State",
+   gpuAccelerate: false,
+   resizeInstances: false,
+   content: {
+   dom: [
+   {
+      rect: ['0px','0px','87px','24px','auto','auto'],
+      borderRadius: ['10px','10px','10px','10px'],
+      id: 'RoundRect',
+      stroke: [0,'rgb(0, 0, 0)','solid'],
+      type: 'rect',
+      fill: ['rgba(0,68,204,1.00)']
+   },
+   {
+      rect: ['7px','4px','82px','19px','auto','auto'],
+      id: 'Text',
+      text: 'Create a BST',
+      font: ['Arial, Helvetica, sans-serif',12,'rgba(255,252,252,1.00)','normal','none',''],
+      type: 'text'
+   }],
+   symbolInstances: [
+   ]
+   },
+   states: {
+      "Base State": {
+         "${_RoundRect}": [
+            ["color", "background-color", 'rgba(0,68,204,1.00)'],
+            ["style", "border-width", '0px'],
+            ["style", "top", '0px'],
+            ["style", "left", '0px'],
+            ["style", "width", '87px']
+         ],
+         "${_Text}": [
+            ["style", "top", '4px'],
+            ["style", "font-size", '12px'],
+            ["color", "color", 'rgba(255,252,252,1.00)'],
+            ["style", "height", '19px'],
+            ["style", "left", '7px'],
+            ["style", "width", '82px']
+         ],
+         "${symbolSelector}": [
+            ["style", "height", '24px'],
+            ["style", "width", '93px']
+         ]
+      }
+   },
+   timelines: {
+      "Default Timeline": {
+         fromState: "Base State",
+         toState: "",
+         duration: 0,
+         autoPlay: true,
+         timeline: [
+         ]
+      }
+   }
+},
+"ButtonCreate": {
+   version: "1.5.0",
+   minimumCompatibleVersion: "1.5.0",
+   build: "1.5.0.217",
+   baseState: "Base State",
+   initialState: "Base State",
+   gpuAccelerate: false,
+   resizeInstances: false,
+   content: {
+   dom: [
+   {
+      id: 'CreateButton',
+      type: 'rect',
+      rect: ['0px','0px','auto','auto','auto','auto']
+   }],
+   symbolInstances: [
+   {
+      id: 'CreateButton',
+      symbolName: 'CreateButton'
+   }   ]
+   },
+   states: {
+      "Base State": {
+         "${_CreateButton}": [
+            ["style", "top", '0px'],
+            ["style", "left", '0px'],
+            ["subproperty", "filter.hue-rotate", '-1deg']
+         ],
+         "${symbolSelector}": [
+            ["style", "height", '24px'],
+            ["style", "width", '93px']
+         ]
+      }
+   },
+   timelines: {
+      "Default Timeline": {
+         fromState: "Base State",
+         toState: "",
+         duration: 10000,
+         autoPlay: false,
+         timeline: [
+            { id: "eid239", tween: [ "subproperty", "${_CreateButton}", "filter.hue-rotate", '-1deg', { fromValue: '-1deg'}], position: 10000, duration: 0 }         ]
+      }
+   }
+},
+"A": {
+   version: "1.5.0",
+   minimumCompatibleVersion: "1.5.0",
+   build: "1.5.0.217",
+   baseState: "Base State",
+   initialState: "Base State",
+   gpuAccelerate: false,
+   resizeInstances: false,
+   content: {
+   dom: [
+   {
+      rect: ['0px','0px','25px','24px','auto','auto'],
+      borderRadius: ['50%','50%','50%','50%'],
+      id: 'Ellipse',
+      stroke: [1,'rgba(0,0,0,1)','solid'],
+      type: 'ellipse',
+      fill: ['rgba(255,255,255,1.00)']
+   },
+   {
+      rect: ['10px','5px','auto','auto','auto','auto'],
+      font: ['Arial, Helvetica, sans-serif',12,'rgba(0,0,0,1.00)','normal','none','normal'],
+      id: 'Text2',
+      text: '2',
+      align: 'left',
+      type: 'text'
+   }],
+   symbolInstances: [
+   ]
+   },
+   states: {
+      "Base State": {
+         "${_Ellipse}": [
+            ["style", "top", '0px'],
+            ["style", "left", '0px'],
+            ["style", "border-style", 'solid'],
+            ["style", "border-width", '1px'],
+            ["color", "background-color", 'rgba(255,255,255,1.00)']
+         ],
+         "${_Text2}": [
+            ["style", "top", '5px'],
+            ["style", "left", '10px'],
+            ["color", "color", 'rgba(0,0,0,1.00)']
+         ],
+         "${symbolSelector}": [
+            ["style", "height", '26px'],
+            ["style", "width", '27px']
+         ]
+      }
+   },
+   timelines: {
+      "Default Timeline": {
+         fromState: "Base State",
+         toState: "",
+         duration: 0,
+         autoPlay: true,
+         timeline: [
+         ]
+      }
+   }
+},
+"B": {
+   version: "1.5.0",
+   minimumCompatibleVersion: "1.5.0",
+   build: "1.5.0.217",
+   baseState: "Base State",
+   initialState: "Base State",
+   gpuAccelerate: false,
+   resizeInstances: false,
+   content: {
+   dom: [
+   {
+      rect: ['0px','0px','25px','24px','auto','auto'],
+      borderRadius: ['50%','50%','50%','50%'],
+      id: 'Ellipse2',
+      stroke: [1,'rgb(0, 0, 0)','solid'],
+      type: 'ellipse',
+      fill: ['rgba(255,255,255,1)']
+   },
+   {
+      rect: ['10px','5px','auto','auto','auto','auto'],
+      font: ['Arial, Helvetica, sans-serif',12,'rgba(0,0,0,1)','normal','none','normal'],
+      id: 'Text3',
+      text: '1',
+      align: 'left',
+      type: 'text'
+   }],
+   symbolInstances: [
+   ]
+   },
+   states: {
+      "Base State": {
+         "${_Text3}": [
+            ["style", "left", '10px'],
+            ["style", "top", '5px']
+         ],
+         "${_Ellipse2}": [
+            ["style", "left", '0px'],
+            ["style", "top", '0px']
+         ],
+         "${symbolSelector}": [
+            ["style", "height", '26px'],
+            ["style", "width", '27px']
+         ]
+      }
+   },
+   timelines: {
+      "Default Timeline": {
+         fromState: "Base State",
+         toState: "",
+         duration: 0,
+         autoPlay: false,
+         timeline: [
+         ]
+      }
+   }
+},
+"C": {
+   version: "1.5.0",
+   minimumCompatibleVersion: "1.5.0",
+   build: "1.5.0.217",
+   baseState: "Base State",
+   initialState: "Base State",
+   gpuAccelerate: false,
+   resizeInstances: false,
+   content: {
+   dom: [
+   {
+      rect: ['0px','0px','25px','24px','auto','auto'],
+      borderRadius: ['50%','50%','50%','50%'],
+      id: 'Ellipse3',
+      stroke: [1,'rgb(0, 0, 0)','solid'],
+      type: 'ellipse',
+      fill: ['rgba(255,255,255,1)']
+   },
+   {
+      rect: ['9px','5px','auto','auto','auto','auto'],
+      font: ['Arial, Helvetica, sans-serif',12,'rgba(0,0,0,1)','normal','none','normal'],
+      id: 'Text4',
+      text: '4',
+      align: 'left',
+      type: 'text'
+   }],
+   symbolInstances: [
+   ]
+   },
+   states: {
+      "Base State": {
+         "${_Ellipse3}": [
+            ["style", "left", '0px'],
+            ["style", "top", '0px']
+         ],
+         "${_Text4}": [
+            ["style", "left", '9px'],
+            ["style", "top", '5px']
+         ],
+         "${symbolSelector}": [
+            ["style", "height", '26px'],
+            ["style", "width", '27px']
+         ]
+      }
+   },
+   timelines: {
+      "Default Timeline": {
+         fromState: "Base State",
+         toState: "",
+         duration: 0,
+         autoPlay: false,
+         timeline: [
+         ]
+      }
+   }
+},
+"D": {
+   version: "1.5.0",
+   minimumCompatibleVersion: "1.5.0",
+   build: "1.5.0.217",
+   baseState: "Base State",
+   initialState: "Base State",
+   gpuAccelerate: false,
+   resizeInstances: false,
+   content: {
+   dom: [
+   {
+      rect: ['0px','0px','25px','24px','auto','auto'],
+      borderRadius: ['50%','50%','50%','50%'],
+      id: 'Ellipse4',
+      stroke: [1,'rgb(0, 0, 0)','solid'],
+      type: 'ellipse',
+      fill: ['rgba(255,255,255,1)']
+   },
+   {
+      rect: ['10px','5px','auto','auto','auto','auto'],
+      font: ['Arial, Helvetica, sans-serif',12,'rgba(0,0,0,1)','normal','none','normal'],
+      id: 'Text8',
+      text: '3',
+      align: 'left',
+      type: 'text'
+   }],
+   symbolInstances: [
+   ]
+   },
+   states: {
+      "Base State": {
+         "${_Ellipse4}": [
+            ["style", "left", '0px'],
+            ["style", "top", '0px']
+         ],
+         "${_Text8}": [
+            ["style", "top", '5px'],
+            ["style", "left", '10px']
+         ],
+         "${symbolSelector}": [
+            ["style", "height", '26px'],
+            ["style", "width", '27px']
+         ]
+      }
+   },
+   timelines: {
+      "Default Timeline": {
+         fromState: "Base State",
+         toState: "",
+         duration: 0,
+         autoPlay: false,
+         timeline: [
+         ]
+      }
+   }
+},
+"E": {
+   version: "1.5.0",
+   minimumCompatibleVersion: "1.5.0",
+   build: "1.5.0.217",
+   baseState: "Base State",
+   initialState: "Base State",
+   gpuAccelerate: false,
+   resizeInstances: false,
+   content: {
+   dom: [
+   {
+      rect: ['0px','0px','25px','24px','auto','auto'],
+      borderRadius: ['50%','50%','50%','50%'],
+      id: 'Ellipse5',
+      stroke: [1,'rgb(0, 0, 0)','solid'],
+      type: 'ellipse',
+      fill: ['rgba(255,255,255,1)']
+   },
+   {
+      rect: ['10px','6px','auto','auto','auto','auto'],
+      font: ['Arial, Helvetica, sans-serif',12,'rgba(0,0,0,1)','normal','none','normal'],
+      id: 'Text5',
+      text: '6',
+      align: 'left',
+      type: 'text'
+   }],
+   symbolInstances: [
+   ]
+   },
+   states: {
+      "Base State": {
+         "${_Ellipse5}": [
+            ["style", "left", '0px'],
+            ["style", "top", '0px']
+         ],
+         "${_Text5}": [
+            ["style", "left", '10px'],
+            ["style", "top", '6px']
+         ],
+         "${symbolSelector}": [
+            ["style", "height", '26px'],
+            ["style", "width", '27px']
+         ]
+      }
+   },
+   timelines: {
+      "Default Timeline": {
+         fromState: "Base State",
+         toState: "",
+         duration: 0,
+         autoPlay: false,
+         timeline: [
+         ]
+      }
+   }
+},
+"F": {
+   version: "1.5.0",
+   minimumCompatibleVersion: "1.5.0",
+   build: "1.5.0.217",
+   baseState: "Base State",
+   initialState: "Base State",
+   gpuAccelerate: false,
+   resizeInstances: false,
+   content: {
+   dom: [
+   {
+      rect: ['0px','0px','25px','24px','auto','auto'],
+      borderRadius: ['50%','50%','50%','50%'],
+      id: 'Ellipse6',
+      stroke: [1,'rgb(0, 0, 0)','solid'],
+      type: 'ellipse',
+      fill: ['rgba(255,255,255,1)']
+   },
+   {
+      rect: ['11px','5px','auto','auto','auto','auto'],
+      font: ['Arial, Helvetica, sans-serif',12,'rgba(0,0,0,1)','normal','none','normal'],
+      id: 'Text6',
+      text: '5',
+      align: 'left',
+      type: 'text'
+   }],
+   symbolInstances: [
+   ]
+   },
+   states: {
+      "Base State": {
+         "${_Text6}": [
+            ["style", "left", '11px'],
+            ["style", "top", '5px']
+         ],
+         "${_Ellipse6}": [
+            ["style", "left", '0px'],
+            ["style", "top", '0px']
+         ],
+         "${symbolSelector}": [
+            ["style", "height", '26px'],
+            ["style", "width", '27px']
+         ]
+      }
+   },
+   timelines: {
+      "Default Timeline": {
+         fromState: "Base State",
+         toState: "",
+         duration: 0,
+         autoPlay: false,
+         timeline: [
+         ]
+      }
+   }
+},
+"G": {
+   version: "1.5.0",
+   minimumCompatibleVersion: "1.5.0",
+   build: "1.5.0.217",
+   baseState: "Base State",
+   initialState: "Base State",
+   gpuAccelerate: false,
+   resizeInstances: false,
+   content: {
+   dom: [
+   {
+      rect: ['0px','0px','25px','24px','auto','auto'],
+      borderRadius: ['50%','50%','50%','50%'],
+      id: 'Ellipse7',
+      stroke: [1,'rgb(0, 0, 0)','solid'],
+      type: 'ellipse',
+      fill: ['rgba(255,255,255,1)']
+   },
+   {
+      rect: ['10px','6px','auto','auto','auto','auto'],
+      font: ['Arial, Helvetica, sans-serif',12,'rgba(0,0,0,1)','normal','none','normal'],
+      id: 'Text7',
+      text: '7',
+      align: 'left',
+      type: 'text'
+   }],
+   symbolInstances: [
+   ]
+   },
+   states: {
+      "Base State": {
+         "${_Ellipse7}": [
+            ["style", "left", '0px'],
+            ["style", "top", '0px']
+         ],
+         "${_Text7}": [
+            ["style", "left", '10px'],
+            ["style", "top", '6px']
+         ],
+         "${symbolSelector}": [
+            ["style", "height", '26px'],
+            ["style", "width", '27px']
+         ]
+      }
+   },
+   timelines: {
+      "Default Timeline": {
+         fromState: "Base State",
+         toState: "",
+         duration: 0,
+         autoPlay: false,
+         timeline: [
+         ]
+      }
+   }
+},
+"Search": {
+   version: "1.5.0",
+   minimumCompatibleVersion: "1.5.0",
+   build: "1.5.0.217",
+   baseState: "Base State",
+   initialState: "Base State",
+   gpuAccelerate: false,
+   resizeInstances: false,
+   content: {
+   dom: [
+   {
+      rect: ['0px','0px','62px','24px','auto','auto'],
+      borderRadius: ['10px','10px','10px','10px'],
+      id: 'RoundRect',
+      stroke: [0,'rgb(0, 0, 0)','solid'],
+      type: 'rect',
+      fill: ['rgba(0,68,204,1.00)']
+   },
+   {
+      rect: ['6px','4px','auto','auto','auto','auto'],
+      font: ['Arial, Helvetica, sans-serif',12,'rgba(255,252,252,1)','normal','none','normal'],
+      id: 'Text',
+      text: 'Search 5',
+      align: 'left',
+      type: 'text'
+   }],
+   symbolInstances: [
+   ]
+   },
+   states: {
+      "Base State": {
+         "${_RoundRect}": [
+            ["color", "background-color", 'rgba(0,68,204,1.00)'],
+            ["style", "top", '0px'],
+            ["style", "height", '24px'],
+            ["style", "border-width", '0px'],
+            ["style", "left", '0px'],
+            ["style", "width", '62px']
+         ],
+         "${_Text}": [
+            ["style", "left", '6px'],
+            ["style", "top", '4px']
+         ],
+         "${symbolSelector}": [
+            ["style", "height", '24px'],
+            ["style", "width", '62px']
+         ]
+      }
+   },
+   timelines: {
+      "Default Timeline": {
+         fromState: "Base State",
+         toState: "",
+         duration: 0,
+         autoPlay: false,
+         timeline: [
+         ]
+      }
+   }
+},
+"Delete": {
+   version: "1.5.0",
+   minimumCompatibleVersion: "1.5.0",
+   build: "1.5.0.217",
+   baseState: "Base State",
+   initialState: "Base State",
+   gpuAccelerate: false,
+   resizeInstances: false,
+   content: {
+   dom: [
+   {
+      rect: ['0px','0px','62px','24px','auto','auto'],
+      borderRadius: ['10px','10px','10px','10px'],
+      id: 'RoundRect2',
+      stroke: [0,'rgb(0, 0, 0)','solid'],
+      type: 'rect',
+      fill: ['rgba(0,68,204,1)']
+   },
+   {
+      rect: ['9px','4px','auto','auto','auto','auto'],
+      font: ['Arial, Helvetica, sans-serif',12,'rgba(255,252,252,1)','normal','none','normal'],
+      id: 'Text2',
+      text: 'Delele 5',
+      align: 'left',
+      type: 'text'
+   }],
+   symbolInstances: [
+   ]
+   },
+   states: {
+      "Base State": {
+         "${symbolSelector}": [
+            ["style", "height", '24px'],
+            ["style", "width", '62px']
+         ],
+         "${_Text2}": [
+            ["style", "top", '4px'],
+            ["style", "left", '9px']
+         ],
+         "${_RoundRect2}": [
+            ["style", "top", '0px'],
+            ["style", "left", '0px'],
+            ["style", "height", '24px']
+         ]
+      }
+   },
+   timelines: {
+      "Default Timeline": {
+         fromState: "Base State",
+         toState: "",
+         duration: 0,
+         autoPlay: false,
+         timeline: [
+         ]
+      }
+   }
+}
+};
+
+
+Edge.registerCompositionDefn(compId, symbols, fonts, resources);
+
+/**
+ * Adobe Edge DOM Ready Event Handler
+ */
+$(window).ready(function() {
+     Edge.launchComposition(compId);
+});
+})(jQuery, AdobeEdge, "EDGE-10685578");
+
+</script>
+
+   
+
+    <!--_btree_edgeActions.js-->
+    <script type="text/javascript" charset="utf-8">
+/***********************
+* Adobe Edge Animate Composition Actions
+*
+* Edit this file with caution, being careful to preserve 
+* function signatures and comments starting with 'Edge' to maintain the 
+* ability to interact with these actions from within Adobe Edge Animate
+*
+***********************/
+(function($, Edge, compId){
+var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonly used Edge classes
+
+   //Edge symbol: 'stage'
+   (function(symbolName) {
+      
+      
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
+         sym.stop();
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${_ButtonCreate}", "click", function(sym, e) {
+         // play the timeline from the given position (ms or label)
+         sym.play("start");
+         
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${_Search}", "click", function(sym, e) {
+         // play the timeline from the given position (ms or label)
+         sym.play("search");
+         
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 10000, function(sym, e) {
+         sym.stop();
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${_Delete}", "click", function(sym, e) {
+         
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 14000, function(sym, e) {
+         sym.stop();
+
+      });
+      //Edge binding end
+
+   })("stage");
+   //Edge symbol end:'stage'
+
+   //=========================================================
+   
+   //Edge symbol: 'CreateButton'
+   (function(symbolName) {   
+   
+   })("CreateButton");
+   //Edge symbol end:'CreateButton'
+
+   //=========================================================
+   
+   //Edge symbol: 'ButtonCreate'
+   (function(symbolName) {   
+   
+   })("ButtonCreate");
+   //Edge symbol end:'ButtonCreate'
+
+   //=========================================================
+   
+   //Edge symbol: 'A'
+   (function(symbolName) {   
+   
+   })("A");
+   //Edge symbol end:'A'
+
+   //=========================================================
+   
+   //Edge symbol: 'B'
+   (function(symbolName) {   
+   
+   })("B");
+   //Edge symbol end:'B'
+
+   //=========================================================
+   
+   //Edge symbol: 'C'
+   (function(symbolName) {   
+   
+   })("C");
+   //Edge symbol end:'C'
+
+   //=========================================================
+   
+   //Edge symbol: 'D'
+   (function(symbolName) {   
+   
+   })("D");
+   //Edge symbol end:'D'
+
+   //=========================================================
+   
+   //Edge symbol: 'E'
+   (function(symbolName) {   
+   
+   })("E");
+   //Edge symbol end:'E'
+
+   //=========================================================
+   
+   //Edge symbol: 'F'
+   (function(symbolName) {   
+   
+   })("F");
+   //Edge symbol end:'F'
+
+   //=========================================================
+   
+   //Edge symbol: 'G'
+   (function(symbolName) {   
+   
+   })("G");
+   //Edge symbol end:'G'
+
+   //=========================================================
+   
+   //Edge symbol: 'Search'
+   (function(symbolName) {   
+   
+   })("Search");
+   //Edge symbol end:'Search'
+
+   //=========================================================
+   
+   //Edge symbol: 'Delete'
+   (function(symbolName) {   
+   
+   })("Delete");
+   //Edge symbol end:'Delete'
+
+})(jQuery, AdobeEdge, "EDGE-10685578");
+
+    </script>
+
+     <style>
+        .edgeLoad-EDGE-10685578 { visibility:hidden; }
+    </style>
+<!--Adobe Edge Runtime End-->
+
+
+
+	<div id="Stage" class="EDGE-10685578">
+	</div>

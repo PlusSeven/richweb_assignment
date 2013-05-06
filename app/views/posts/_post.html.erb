@@ -1,5 +1,5 @@
 <div class='answers row-fluid' id="<%= post.id%>">
-
+      <!--vote for answers-->
        <div class="span1 votecell">
           <div class="vote">
             <div class="vote_up"><%= post.id%></div>
@@ -8,6 +8,7 @@
           </div>
         </div>
         
+        <!--answer content-->
         <div>
           <div class="span9 post_block" id="<%= "answer_"+ post.id.to_s %>">
             <div class="content">
@@ -24,7 +25,7 @@
           </div>
         </div>
 
-        
+        <!--answer owner-->
           <div class="span2 post_user">
             <cite>
               <a href="/users/<%= post.user_id%>"><%= get_created_by_user_post(post) %></a>

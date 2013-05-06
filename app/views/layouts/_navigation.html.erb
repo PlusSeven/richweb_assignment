@@ -9,10 +9,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-        </div>
-        
+        </div> 
       </a>
 
+      <!--The display on phones-->
       <div class="pull-right visible-phone">
         <ul class="nav">
           <% if session[:user_id].nil? %>
@@ -50,6 +50,7 @@
         <% end %> 
       </div> <!--End user sign in for phone--> 
       
+      <!--The home link-->
       <div class="pull-left">
         <ul class="nav">
         <li class="active"><a href="/">Home</a></li>
@@ -73,7 +74,7 @@
         </ul>
       </div> <!--end nav-collapse-->
 
-       
+      <!--The display for devices except mobile phone-->
       <div class="hidden-phone pull-right">
         <ul class="nav">
           <% if session[:user_id].nil? %>

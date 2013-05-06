@@ -1,9 +1,9 @@
 RichwebAssignment::Application.routes.draw do
+  resources :notes
+
   resources :votes
 
-
   resources :sections
-
 
   controller :courses do
     get 'courses' => :index, as: :courses
