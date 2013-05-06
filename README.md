@@ -43,11 +43,11 @@ If you have any questions, please contact me through Email: d09124234@mydit.ie
 
 ------------------------------------------------------------------------------------------
 Features:
+
 1. Sign up
 2. Sign in
 3. Sign out
 4. Operate profile
-
 5. Learn course
 	- Learn courses with information and animation
 	- User can add notes for one course
@@ -57,7 +57,6 @@ Features:
 	- Each topic contains posts which are answers
 	- User can vote the questions and answers
 7. User can see his own list of questions and answers
-
 8. See more details in the about page
 
 ------------------------------------------------------------------------------------------
