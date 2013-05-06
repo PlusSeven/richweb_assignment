@@ -1,13 +1,4 @@
 RichwebAssignment::Application.routes.draw do
-  resources :posts
-
-
-  resources :topics
-
-
-  resources :forums
-
-
   resources :sections
 
 
@@ -34,6 +25,40 @@ RichwebAssignment::Application.routes.draw do
   end
 
   resources :users
+
+  #routes for forums, topics and posts
+  constraints do
+#forums
+  controller :forums do
+    get 'forums' => :index, as: :forums
+    post 'forums' => :create
+
+    get 'forums/new' => :new, as: :new_forum
+    get 'forums/:id(.:format)/edit' => :edit, as: :edit_forum
+    put 'forums/:id(.:format)' => :update
+    
+    delete 'forums/:id(.:format)' => :delete
+  end
+
+#topics
+    match '/forums/:forum_id(.:format)' => 'topics#index', as: :forum_topics 
+    match '/forums/:forum_id(.:format)/topics/new' => 'topics#new',as: :new_forum_topic, via: :get
+    match '/forums/:forum_id(.:format)/topics' => 'topics#create', as: :forum_topic, via: :post
+    match '/forums/:forum_id(.:format)/:topic_id(.:format)/edit' => 'topics#edit', as: :edit_forum_topic
+    match '/forums/:forum_id(.:format)/:topic_id(.:format)' => 'topics#update', as: :forum_topic_id, via: :put
+    
+    match '/users/:user_id(.:format)/topics' => 'topics#own'
+
+#posts
+    match '/users/:user_id(.:format)/posts' => 'posts#own'
+    
+    match '/forums/:forum_id(.:format)/:topic_id(.:format)' => 'posts#index', as: :forum_topic_posts
+    match '/forums/:forum_id(.:format)/:topic_id(.:format)/posts(.:format)' => 'posts#index', via: :get
+    match '/forums/:forum_id(.:format)/:topic_id(.:format)/posts(.:format)' => 'posts#create', as: :forum_topic_post,via: :post
+
+    match '/forums/:forum_id(.:format)/:topic_id(.:format)/:post_id(.:format)/edit' => 'posts#edit',as: :edit_forum_topic_post, via: :get
+    match '/forums/:forum_id(.:format)/:topic_id(.:format)/:post_id(.:format)' => 'posts#update', as: :forum_topic_post_id, via: :put                  
+  end
 
   root :to => 'main#index'
 

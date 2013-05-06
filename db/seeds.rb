@@ -67,4 +67,4 @@ Section.create(name: "Stack Empty", course_name: "stack", description: "Empty is
 Forum.create(name:"Stack",description:"")
 Forum.create(name:"Queue",description:"")
 Forum.create(name:"Tree",description:"")
-Forum.create(name:"Bst",description:"")
+Forum.create(name:"Binary Search Tree",description:"")
