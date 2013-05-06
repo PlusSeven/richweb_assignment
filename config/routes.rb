@@ -1,4 +1,7 @@
 RichwebAssignment::Application.routes.draw do
+  resources :votes
+
+
   resources :sections
 
 

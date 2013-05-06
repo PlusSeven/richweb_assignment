@@ -82,25 +82,34 @@ class PostsController < ApplicationController
     end
 
     
+      
     if params.has_key?(:vote)
       @vote = params[:vote]
       @vote_status = @vote[:vote]
 
-      if @vote_status == "up"
-        if @post.vote.present?
-          @post.vote = @post.vote + 1
-        else
-          @post.vote = 1
+      @vote_topic = Vote.find(:first, conditions: ["user_id = ? and post_id = ?", session[:user_id],@post.id])
+      if @vote_topic.nil?
+        if @vote_status == "up"
+          if @post.vote.present?
+            @post.vote = @post.vote + 1
+          else
+            @post.vote = 1
+          end
+        elsif @vote_status == "down"
+          if @post.vote.present?
+            @post.vote = @post.vote - 1
+          else
+            @post.vote = -1
+          end
         end
-      elsif @vote_status == "down"
-        if @post.vote.present?
-          @post.vote = @post.vote - 1
-        else
-          @post.vote = -1
-        end
-      end
 
-      status = @post.update_attributes(params[:post])
+        @vote_topic_new = Vote.new
+        @vote_topic_new.user_id = session[:user_id]
+        @vote_topic_new.post_id = @post.id
+        @vote_topic_new.save
+        status = @post.update_attributes(params[:post])
+
+      end
     end
 
 

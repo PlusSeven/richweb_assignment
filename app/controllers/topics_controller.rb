@@ -81,18 +81,25 @@ class TopicsController < ApplicationController
       @vote = params[:vote]
       @vote_status = @vote[:vote]
 
-      if @vote_status == "up"
-        if @topic.vote.present?
-          @topic.vote = @topic.vote + 1
-        else
-          @topic.vote = 1
+      @vote_topic = Vote.find(:first, conditions: ["user_id = ? and topic_id = ?", session[:user_id],@topic.id])
+      if @vote_topic.nil?
+        if @vote_status == "up"
+          if @topic.vote.present?
+            @topic.vote = @topic.vote + 1
+          else
+            @topic.vote = 1
+          end
+        elsif @vote_status == "down"
+          if @topic.vote.present?
+            @topic.vote = @topic.vote - 1
+          else
+            @topic.vote = -1
+          end
         end
-      elsif @vote_status == "down"
-        if @topic.vote.present?
-          @topic.vote = @topic.vote - 1
-        else
-          @topic.vote = -1
-        end
+        @vote_topic_new = Vote.new
+        @vote_topic_new.user_id = session[:user_id]
+        @vote_topic_new.topic_id = @topic.id
+        @vote_topic_new.save
       end
     end
 

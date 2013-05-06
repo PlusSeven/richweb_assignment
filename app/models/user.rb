@@ -6,10 +6,10 @@
 
 require 'digest/sha2'
 class User < ActiveRecord::Base
-  has_many :codes
   has_many :topics
   has_many :posts
   has_many :notes
+  has_many :votes
 
   attr_accessor :password_confirmation
   attr_reader :password

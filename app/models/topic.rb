@@ -2,6 +2,8 @@ class Topic < ActiveRecord::Base
   attr_accessible :last_user_id, :description, :forum_id, :status, :subject, :user_id, :vote
 
   has_many :posts, :dependent => :destroy #when the topic is deleted, all the posts are deleted
+  has_many :votes
+
   belongs_to :user
   belongs_to :forum
 

@@ -25,11 +25,11 @@
   <div class="forms">
     
     <div>
-      <h4 style="margin-left:75px">Add an answer
+      <h4 style="margin-left:5%">Add an answer
       </h4>
     </div>
 
-    <div class="edit_panel span9" style="margin-top:10px;margin-left:75px">
+    <div class="edit_panel span9" style="margin-top:10px;margin-left:5%">
       <%= render "form_create"%>
     </div>
 
@@ -114,7 +114,7 @@
           }
       });
       console.log(answer_id);
-      
+
       var update_url_post = edit_url.replace('edit', answer_id);
 
       $.ajax({
@@ -132,7 +132,5 @@
         alert("Vote failed, please try again!");
       });
     });
-
-
   });
 </script>
