@@ -1,0 +1,68 @@
+      <div class="courselist" id="data-structures">
+    <legend><h2>Data Structures</h2></legend>
+<!-- row 1 -->      
+    <ul class="courses">
+          <li class="course">
+              <a href="/courses/stack">
+                <h3 class="title"> 
+                  Stack                 
+                </h3>
+                <div class="description">
+                  <p>
+                    <% @courses.each do |course|%>
+                      <%= course.description if course.name == "stack"%>
+                    <%end%>
+                  </p>
+                </div>
+              </a>
+          </li>
+          <li class="course">
+              <a href="/courses/queue">
+                <h3 class="title">
+                  Queue
+                </h3>
+                <div class="description">
+                  <p>
+                    <% @courses.each do |course|%>
+                      <%= course.description if course.name == "queue"%>
+                    <%end%>
+                  </p>
+                </div>
+              </a>
+          </li>
+         
+          <li class="course">
+              <a href="/courses/tree">
+                <h3 class="title">
+                  <!--<span class="number">1</span>-->
+                  Tree                  
+                </h3>
+                <div class="description">
+                  <p>
+                    <% @courses.each do |course|%>
+                      <%= course[:description] if course[:name] == "tree"%>
+                    <%end%>
+                  </p>
+                </div>
+              </a>
+          </li>
+          <li class="course">
+              <a href="/courses/bst">
+                <h3 class="title">
+                  <!--<span class="number">1</span>-->
+                  Binary Search Tree                  
+                </h3>
+                <div class="description">
+                  <p>
+                    <% @courses.each do |course|%>
+                      <%= course.description if course.name == "bst"%>
+                    <%end%>
+                  </p>
+                </div>
+              </a>
+          </li>
+          
+        </ul>
+
+      </div>  <!--end data structure-->
+</div>

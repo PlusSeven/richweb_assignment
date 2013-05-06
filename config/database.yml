@@ -42,5 +42,4 @@ production:
   username: jiaqi
   password: "richweb"
   host: localhost
-  #socket http://stackoverflow.com/questions/5499035/ruby-on-rails-3-cant-connect-to-local-mysql-server-through-socket-tmp-mysql-s
   socket: /var/run/mysqld/mysqld.sock

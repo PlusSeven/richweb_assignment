@@ -35,6 +35,7 @@ border-radius: 8px;
 
 .featurework {
   margin: 0 3% 10px 1%;
+  font-size: 16px;
 }
 
 .ribbon-left{
@@ -137,4 +138,66 @@ The form css code below are designed basic from http://twitter.github.com/bootst
   padding: 7px 9px;
   width: 94%
 }
+
+
+/*-------------------------------------------------------------
+Courses - The styles for the learn page is basic on the styles in http://www.codecademy.com/tracks/web */ 
+
+.courselist {
+  width: 650px;
+  margin: 0 auto;  
+}
+
+ul.courses, ul.unit-courses{
+  margin: 0;
+  list-style: none
+}
+
+span.number {
+  color: #A49E92;
+}
+
+h3.title{
+  margin-bottom: 0.5em;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1em;
+  color: #AE5C1F;
+}
+
+.unit-course h4{
+  color: #302820;
+}
+li.course{
+  background-color: #F3F3E9;
+  margin-bottom: 2px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+li.unit-course{
+  background-color: #F3F3E9;
+  margin-bottom: 2px;
+  padding: 3px 15px 3px 15px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+li.course:hover,li.unit-course:hover {
+  background-color: #E7E6DC;
+  text-decoration: none 
+}
+
+li.course a:hover,li.unit-course a:hover {
+  text-decoration: none 
+}
+
+
+div.description p{
+  color: #333;
+}
+
 

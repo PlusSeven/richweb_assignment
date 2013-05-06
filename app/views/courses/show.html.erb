@@ -1,0 +1,46 @@
+<ul class="breadcrumb">
+        <li><a href="/">Home</a> <span class="divider">/</span></li>
+        <li><a href="/courses">Learn Courses</a> <span class="divider">/</span></li>
+        <li class="active"><%=@course[:name].capitalize%></li>
+</ul>
+
+<div class="row-fluid">
+  <div class="span6 course" id="<%=@course[:id]%>">
+    <div class="accordion" id="accordion">
+      <!--Sections-->
+      <% if @sections.nil? %>
+      	<div><h5>Comming Soon</h5></div>
+      <%else%>
+	      <% @sections.each do |section| %>
+	      <div class="accordion-group">
+	        <div class="accordion-heading">
+	          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=section[:id]%>">
+	            <h5><%=section[:name]%></h5>
+	          </a>
+	        </div>
+	        
+	        <div id="collapse<%=section[:id]%>" class="accordion-body collapse <%= "in" if @count == 0 %>">
+	        <%@count=@count+1%>	
+	          <div class="accordion-inner">
+	            <%=section[:description]%>
+	            <%if section[:code].present?%>
+	            	<pre class="pre-scrollable pre-hori">
+<%= section[:code]%>
+	            	</pre>
+	            <%end%>
+	          </div>
+	        </div>
+	      </div>
+	      <%end%>
+      <%end%>
+    </div><!--end-->
+  </div><!--end span-->
+  
+  <div class="span6">
+    <legend>Animation
+    
+  </legend>
+    
+
+
+</div><!--end row-fluid-->

@@ -1,10 +1,20 @@
 ---
+course_intro.png: course_intro-ed732a6063e8bb0f5e9ea8d8b932bcb8.png
+course_intro/index.png: course_intro-ed732a6063e8bb0f5e9ea8d8b932bcb8.png
 favicon.png: favicon-b5de08f6a8dd07afff9dfdb37de15c00.png
 favicon/index.png: favicon-b5de08f6a8dd07afff9dfdb37de15c00.png
-application.js: application-dc9a8b23a4c79a4934d3d64cf1146042.js
-application/index.js: application-dc9a8b23a4c79a4934d3d64cf1146042.js
-application.css: application-84317d347d78b58c7fed5b7fa5b881e0.css
-application/index.css: application-84317d347d78b58c7fed5b7fa5b881e0.css
+lego.png: lego-ced48cdf1097a7de7917c3ebd6f57b16.png
+lego/index.png: lego-ced48cdf1097a7de7917c3ebd6f57b16.png
+ribbon-left.jpg: ribbon-left-9af9e9096b238f5263530e06f0912980.jpg
+ribbon-left/index.jpg: ribbon-left-9af9e9096b238f5263530e06f0912980.jpg
+ribbon-mid.png: ribbon-mid-04a58cebc499072a0040bbada08074b1.png
+ribbon-mid/index.png: ribbon-mid-04a58cebc499072a0040bbada08074b1.png
+ribbon-right.jpg: ribbon-right-de1e18a7521688ffe47dd3a1d467fc74.jpg
+ribbon-right/index.jpg: ribbon-right-de1e18a7521688ffe47dd3a1d467fc74.jpg
+application.js: application-460a0f194e0f0ef0412a986d11b1e976.js
+application/index.js: application-460a0f194e0f0ef0412a986d11b1e976.js
+application.css: application-8b84320c1e61bd3fb8b99098078536b2.css
+application/index.css: application-8b84320c1e61bd3fb8b99098078536b2.css
 jquery.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map
 jquery/index.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map
 glyphicons-halflings-white.png: glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png

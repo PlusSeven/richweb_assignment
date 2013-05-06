@@ -3,10 +3,45 @@ The styles are based on http://twitter.github.com/bootstrap/examples/hero.html
 -->
 
 <div class="mobile_intro visible-phone">
-  <h5>Welcome</h5>
+  <h5>Learn Data Structures</h5>
 </div><!--End introduction-->
 
 <div class="introduction hidden-phone">
-    <h2>Welcome</h2>
+    <h2>Learn Data Structures Online</h2>
+    <p>This web application provides courses to learn basic data structures and help with other users in a forum for the courses.</p>
+    <a href="/about" class="btn btn-primary btn-large">Learn more &raquo;</a>
 </div><!--End introduction-->
 
+<!--the design of the featurework is based on http://www.colbowdesign.com/-->
+<div class="featurework">
+        <div class="span7">
+          <div class="ribbon">
+            <h3>Learn Courses</h3>
+            <span class="ribbon-left"></span>
+            <span class="ribbon-right"></span>
+           </div>
+           <div class="learn">
+            <%= image_tag("course_intro.png", :class => "course_intro", :alt => "learn courses") %>
+            <h2></h2>
+            <p>There are some basic courses with sample code and animations to learn. Choose one type of data structures and start your course. Have fun!</p>
+            <p class="text-right"><a class="btn" href="/courses">Start Learn »</a></p>
+          </div>
+        </div>
+        <div class="train span4">
+          <div class="ribbon">
+            <h3>Forums</h3>
+            <span class="ribbon-left"></span>
+            <span class="ribbon-right"></span>
+          </div>
+          <div class="learn">
+            <div class="train_intro">
+             <%= image_tag("lego.png", :alt => "train problems") %>
+             <%= image_tag("lego.png", :alt => "train problems") %>
+            </div>
+            <div>
+            <p>The Forums are places to ask and answer questions about each courses. You can also vote up the questions and answers to help others find the useful information.</p>
+            <p class="text-right"><a class="btn" href="/forums">Go to Forum »</a></p>
+            </div>
+          </div>
+       </div>
+</div> <!--end row-->
